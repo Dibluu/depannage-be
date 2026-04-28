@@ -1394,31 +1394,28 @@
     var words = document.querySelectorAll('.hero-trade-word');
     if (!words.length) return;
     var current = 0;
-    var interval = 2500; // ms per word
 
-    function next() {
+    function showNext() {
       var prev = current;
       current = (current + 1) % words.length;
 
-      // Exit current
+      // Slide current word out (up)
       words[prev].classList.remove('active');
       words[prev].classList.add('exit');
 
-      // After exit transition, clean up
-      setTimeout(function () {
-        words[prev].classList.remove('exit');
-        words[prev].style.transform = 'translateY(100%)';
-      }, 400);
-
-      // Enter next (start from below)
-      words[current].style.transform = 'translateY(100%)';
-      words[current].style.opacity = '0';
-      // Force reflow so transition fires
-      void words[current].offsetWidth;
+      // Slide next word in from below — no inline styles, CSS handles the start position
       words[current].classList.add('active');
+
+      // After transition ends, silently reset the exited word back to bottom
+      setTimeout(function () {
+        words[prev].style.transition = 'none';
+        words[prev].classList.remove('exit');
+        void words[prev].offsetWidth; // force reflow
+        words[prev].style.transition = '';
+      }, 450);
     }
 
-    setInterval(next, interval);
+    setInterval(showNext, 2500);
   })();
 </script>
 
