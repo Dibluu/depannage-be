@@ -245,7 +245,7 @@ export default function BookingPage() {
 
             {step === 1 && <Step1 trade={trade} onSelect={selectTrade} />}
             {step === 2 && <Step2 trade={trade} problem={problem} otherText={otherText} setOtherText={setOtherText} onSelect={selectProblem} onContinue={() => { setProblem(otherText); setPrice({ min: 89, max: 149, duration: '1h–2h' }); goTo(3) }} />}
-            {step === 3 && <Step3 trade={trade} problem={problem || otherText} price={price} onNext={() => goTo(4)} />}
+            {step === 3 && <Step3 trade={trade} problem={problem || otherText} price={price} onNext={() => goTo(4)} onPriceUpdate={p => setPrice(p)} />}
             {step === 4 && <Step4 slot={slot} setSlot={setSlot} days={days} onNext={() => goTo(5)} />}
             {step === 5 && <Step5 contact={contact} setContact={setContact} photo={photo} photoPreview={photoPreview} fileRef={fileRef} onPhoto={handlePhoto} onClearPhoto={() => { setPhoto(null); setPhotoPreview(null) }} trade={trade} problem={problem || otherText} price={price} slotLabel={slotLabel} loading={loading} onSubmit={submitBooking} />}
             {step === 6 && <Step6 trade={trade} problem={problem || otherText} price={price} slotLabel={slotLabel} contact={contact} bookingRef={bookingRef} days={days} />}
@@ -351,8 +351,49 @@ function Step2({ trade, problem, otherText, setOtherText, onSelect, onContinue }
   )
 }
 
-/* ─── STEP 3 — Prix ─────────────────────────────────────── */
-function Step3({ trade, problem, price, onNext }) {
+/* ─── STEP 3 — Prix (fetches live from Supabase) ─────────── */
+function Step3({ trade, problem, price: fallbackPrice, onNext, onPriceUpdate }) {
+  const [livePrice, setLivePrice] = useState(null)   // null = loading
+  const [noResult,  setNoResult]  = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+    async function fetchPrice() {
+      setNoResult(false)
+      setLivePrice(null)
+      const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+      const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      if (!url || !key) { setLivePrice(fallbackPrice); return }
+      try {
+        const { createClient } = await import('@supabase/supabase-js')
+        const sb = createClient(url, key)
+        const { data } = await sb
+          .from('price_matrix')
+          .select('price_min, price_max, duration')
+          .eq('trade', trade)
+          .eq('problem', problem)
+          .eq('active', true)
+          .maybeSingle()
+        if (cancelled) return
+        if (data) {
+          const p = { min: data.price_min, max: data.price_max, duration: data.duration }
+          setLivePrice(p)
+          onPriceUpdate?.(p)
+        } else {
+          setNoResult(true)
+          setLivePrice(fallbackPrice)
+        }
+      } catch {
+        if (!cancelled) setLivePrice(fallbackPrice)
+      }
+    }
+    fetchPrice()
+    return () => { cancelled = true }
+  }, [trade, problem]) // eslint-disable-line
+
+  const price = livePrice || fallbackPrice
+  const loading = livePrice === null && !noResult
+
   return (
     <>
       <StepHeader title="Votre prix estimé" sub="Tarif fixe. Ce que vous voyez est ce que vous payez." />
@@ -364,21 +405,35 @@ function Step3({ trade, problem, price, onNext }) {
         </div>
 
         {/* Price reveal */}
-        <div style={{ border: '2px solid #22C55E', borderRadius: 16, background: '#F0FDF4', padding: '22px 20px', marginBottom: 16, textAlign: 'center' }}>
-          <div style={{ fontSize: 13, color: '#1A1A2E', opacity: 0.55, marginBottom: 4 }}>Entre</div>
-          <div style={{ fontSize: 40, fontWeight: 900, color: '#1A1A2E', lineHeight: 1.1, letterSpacing: -1 }}>
-            {price.min}€ — {price.max}€
-            <span style={{ fontSize: 16, fontWeight: 600, opacity: 0.6, marginLeft: 6 }}>TTC</span>
+        {loading ? (
+          <div style={{ border: '2px solid #E5E7EB', borderRadius: 16, background: '#F9FAFB', padding: '32px 20px', marginBottom: 16, textAlign: 'center', color: '#9CA3AF', fontSize: 14 }}>
+            Chargement du tarif...
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 10, fontSize: 13, fontWeight: 700, color: '#22C55E' }}>
-            <Check size={16} /> Prix fixe garanti
+        ) : noResult ? (
+          <div style={{ border: '2px solid #FEF3C7', borderRadius: 16, background: '#FFFBEB', padding: '22px 20px', marginBottom: 16, textAlign: 'center' }}>
+            <div style={{ fontSize: 22, marginBottom: 6 }}>💬</div>
+            <div style={{ fontSize: 16, fontWeight: 700, color: '#1A1A2E', marginBottom: 4 }}>Tarif sur devis</div>
+            <div style={{ fontSize: 13, color: '#1A1A2E', opacity: 0.6 }}>Notre équipe vous contacte sous 15 min avec une estimation personnalisée.</div>
           </div>
-        </div>
+        ) : (
+          <div style={{ border: '2px solid #22C55E', borderRadius: 16, background: '#F0FDF4', padding: '22px 20px', marginBottom: 16, textAlign: 'center' }}>
+            <div style={{ fontSize: 13, color: '#1A1A2E', opacity: 0.55, marginBottom: 4 }}>Entre</div>
+            <div style={{ fontSize: 40, fontWeight: 900, color: '#1A1A2E', lineHeight: 1.1, letterSpacing: -1 }}>
+              {price.min}€ — {price.max}€
+              <span style={{ fontSize: 16, fontWeight: 600, opacity: 0.6, marginLeft: 6 }}>TTC</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 10, fontSize: 13, fontWeight: 700, color: '#22C55E' }}>
+              <Check size={16} /> Prix fixe garanti
+            </div>
+          </div>
+        )}
 
         {/* Duration */}
+        {!loading && !noResult && (
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, fontSize: 14, color: '#1A1A2E', fontWeight: 500 }}>
           <Clock size={16} color="#FF6B35" /> Durée estimée : {price.duration}
         </div>
+        )}
 
         {/* Includes */}
         <div style={{ fontSize: 12, fontWeight: 700, color: '#1A1A2E', opacity: 0.5, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 10 }}>Ce qui est inclus</div>
