@@ -51,7 +51,8 @@ async function notify(b) {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      from: process.env.BOOKING_FROM_EMAIL || 'Dépannage.be <reservations@xn--dpannage-b1a.be>',
+      // Without a verified domain, Resend's test sender only delivers to the account owner's address.
+      from: process.env.BOOKING_FROM_EMAIL || 'Dépannage.be <onboarding@resend.dev>',
       to: [to],
       subject: `${b.urgent ? '⚡ ' : ''}Nouvelle demande ${b.trade} — ${b.commune} (${b.ref})`,
       text: lines.join('\n'),
