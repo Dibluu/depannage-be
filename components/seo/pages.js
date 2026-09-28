@@ -8,7 +8,7 @@ import { FEES, tradeRange, loadCatalog } from '../../lib/pricing'
 import { communeContext } from '../../lib/seo/page-context'
 import { HUBS } from '../../lib/seo/content/hubs'
 import { isActive, activeRegions, activeTrades } from '../../lib/seo/rollout'
-import { tradeUrl, regionUrl, communeUrl, pricesUrl, bookingUrl, absolute } from '../../lib/seo/routes'
+import { tradeUrl, regionUrl, communeUrl, pricesUrl, bookingUrl, absolute, ANNUAIRE_PATH } from '../../lib/seo/routes'
 import { organization, website, breadcrumb, service, city, faqPage, jsonLd } from '../../lib/seo/schema'
 import { euro } from '../../lib/seo/content/shared'
 import { PARTNERS } from '../../lib/partners'
@@ -316,6 +316,11 @@ export async function TradePage({ params, lang }) {
         <Section title={t.howTitle}><HowItWorks lang={lang} /></Section>
         <Section title={t.faqTitle}><Faq faqs={faqs} /></Section>
         <CtaBand lang={lang} title={h.tradeH1(trade)} href={book()} />
+        {trade.id === 'serrurier' && lang === 'fr' && (
+          <p className="mx-auto w-full max-w-5xl px-4 pb-4 text-xs text-navy/50 sm:px-6">
+            Voir aussi l’<Link href={ANNUAIRE_PATH} className="underline">annuaire des serruriers vérifiés</Link>.
+          </p>
+        )}
       </main>
       <SiteFooter lang={lang} />
       <MobileBar lang={lang} href={book()} />
