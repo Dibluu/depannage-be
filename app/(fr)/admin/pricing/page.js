@@ -6,14 +6,17 @@ import {
   LogOut, TrendingUp, Euro, Clock, CheckCircle,
 } from 'lucide-react'
 
-/* ─── Supabase client ─────────────────────────────────────── */
-function getSupabase() {
-  if (typeof window === 'undefined') return null
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  if (!url || !key) return null
-  const { createClient } = require('@supabase/supabase-js')
-  return createClient(url, key)
+/* ─── Server API (service role, admin session required) ─── */
+async function api(method, body, query = '') {
+  const res = await fetch(`/api/admin/prices${query}`, {
+    method,
+    headers: body ? { 'Content-Type': 'application/json' } : undefined,
+    body: body ? JSON.stringify(body) : undefined,
+  })
+  const data = await res.json().catch(() => null)
+  if (res.status === 401) { window.location.href = '/admin/login'; return { error: 'auth' } }
+  if (res.status === 503) return { error: 'config' }
+  return res.ok ? { data } : { error: data?.error || 'error' }
 }
 
 /* ─── Constants ───────────────────────────────────────────── */
@@ -235,7 +238,6 @@ export default function AdminPricingPage() {
   const [newRow,      setNewRow]      = useState({ ...EMPTY_ROW })
   const [toasts,      setToasts]      = useState([])
   const [noSupabase,  setNoSupabase]  = useState(false)
-  const supabaseRef = useRef(null)
 
   /* ── Toast helper ── */
   const addToast = useCallback((message, type = 'success') => {
@@ -246,29 +248,19 @@ export default function AdminPricingPage() {
 
   /* ── Fetch data ── */
   const fetchRows = useCallback(async () => {
-    const sb = supabaseRef.current
-    if (!sb) return
-    const { data, error } = await sb
-      .from('price_matrix')
-      .select('*')
-      .order('trade')
-      .order('problem')
-    if (error) { addToast('Erreur de chargement.', 'error'); return }
+    const { data, error } = await api('GET')
+    if (error === 'config') { setNoSupabase(true); setLoading(false); return }
+    if (error) { addToast('Erreur de chargement.', 'error'); setLoading(false); return }
     setRows(data || [])
     setLoading(false)
   }, [addToast])
 
-  /* ── Init + realtime ── */
+  /* ── Init + refresh when the tab regains focus ── */
   useEffect(() => {
-    const sb = getSupabase()
-    if (!sb) { setNoSupabase(true); setLoading(false); return }
-    supabaseRef.current = sb
     fetchRows()
-
-    const channel = sb.channel('price_matrix_rt')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'price_matrix' }, () => fetchRows())
-      .subscribe()
-    return () => sb.removeChannel(channel)
+    const onFocus = () => fetchRows()
+    window.addEventListener('focus', onFocus)
+    return () => window.removeEventListener('focus', onFocus)
   }, [fetchRows])
 
   /* ── Logout ── */
@@ -279,11 +271,7 @@ export default function AdminPricingPage() {
 
   /* ── Toggle active ── */
   async function handleToggle(row) {
-    const sb = supabaseRef.current
-    if (!sb) return
-    const { error } = await sb.from('price_matrix')
-      .update({ active: !row.active, updated_at: new Date().toISOString() })
-      .eq('id', row.id)
+    const { error } = await api('PATCH', { id: row.id, active: !row.active })
     if (error) { addToast('Erreur lors de la mise à jour.', 'error'); return }
     setRows(prev => prev.map(r => r.id === row.id ? { ...r, active: !r.active } : r))
   }
@@ -297,17 +285,15 @@ export default function AdminPricingPage() {
 
   /* ── Save edit ── */
   async function handleSaveEdit() {
-    const sb = supabaseRef.current
-    if (!sb) return
     setSaving(true)
-    const { error } = await sb.from('price_matrix').update({
+    const { error } = await api('PATCH', {
+      id:        editingId,
       trade:     editData.trade,
       problem:   editData.problem,
       price_min: Number(editData.price_min),
       price_max: Number(editData.price_max),
       duration:  editData.duration,
-      updated_at: new Date().toISOString(),
-    }).eq('id', editingId)
+    })
     setSaving(false)
     if (error) { addToast('Erreur lors de la sauvegarde.', 'error'); return }
     setRows(prev => prev.map(r => r.id === editingId ? { ...r, ...editData, price_min: Number(editData.price_min), price_max: Number(editData.price_max) } : r))
@@ -317,9 +303,8 @@ export default function AdminPricingPage() {
 
   /* ── Delete ── */
   async function handleDelete() {
-    const sb = supabaseRef.current
-    if (!sb || !deleteRow) return
-    const { error } = await sb.from('price_matrix').delete().eq('id', deleteRow.id)
+    if (!deleteRow) return
+    const { error } = await api('DELETE', null, `?id=${deleteRow.id}`)
     if (error) { addToast('Erreur lors de la suppression.', 'error'); setDeleteRow(null); return }
     setRows(prev => prev.filter(r => r.id !== deleteRow.id))
     setDeleteRow(null)
@@ -328,17 +313,15 @@ export default function AdminPricingPage() {
 
   /* ── Add new ── */
   async function handleAddSave() {
-    const sb = supabaseRef.current
-    if (!sb) return
     setSaving(true)
-    const { data, error } = await sb.from('price_matrix').insert({
+    const { data: inserted, error } = await api('POST', {
       trade:     newRow.trade,
       problem:   newRow.problem,
       price_min: Number(newRow.price_min),
       price_max: Number(newRow.price_max),
       duration:  newRow.duration,
-      active:    true,
-    }).select().single()
+    })
+    const data = inserted?.[0]
     setSaving(false)
     if (error) { addToast('Erreur lors de l\'ajout.', 'error'); return }
     setRows(prev => [...prev, data])
@@ -365,7 +348,7 @@ export default function AdminPricingPage() {
           <h2 className="text-xl font-bold mb-2" style={{ color: '#1A1A2E' }}>Supabase non configuré</h2>
           <p className="text-sm text-gray-500">
             Ajoutez <code className="bg-gray-100 px-1 rounded">NEXT_PUBLIC_SUPABASE_URL</code> et{' '}
-            <code className="bg-gray-100 px-1 rounded">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> dans vos variables d&apos;environnement Vercel.
+            <code className="bg-gray-100 px-1 rounded">SUPABASE_SERVICE_ROLE_KEY</code> dans vos variables d&apos;environnement Vercel.
           </p>
         </div>
       </div>

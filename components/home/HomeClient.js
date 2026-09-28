@@ -4,16 +4,6 @@ import Link from 'next/link'
 
 const TRADES = ['Plombier', 'Électricien', 'Serrurier', 'Chauffagiste', 'Menuisier']
 
-const REVIEWS = [
-  { name: 'Marc D.',     text: 'Plombier arrivé en 1h30. Problème réglé, prix respecté.' },
-  { name: 'Isabelle V.', text: 'Enfin un service transparent ! Je recommande à 100%.' },
-  { name: 'Kevin L.',    text: 'Électricien pro, rapide et le prix annoncé était exact.' },
-  { name: 'Nathalie B.', text: 'Fuite réparée le soir même. Merci Dépannage.be !' },
-  { name: 'Thomas R.',   text: 'Service impeccable, aucune mauvaise surprise sur la facture.' },
-  { name: 'Amina K.',    text: 'Réactif, sérieux, honnête. Que demander de plus ?' },
-  { name: 'Pierre G.',   text: 'Tableau électrique remis aux normes en 2h. Top !' },
-  { name: 'Laura M.',    text: 'Prix annoncé, prix payé. Enfin un artisan de confiance.' },
-]
 
 const FAQS = [
   {
@@ -26,7 +16,7 @@ const FAQS = [
   },
   {
     q: 'Quelles zones couvrez-vous ?',
-    a: 'Dépannage.be couvre l\'ensemble du territoire belge. Que vous soyez à Bruxelles, Liège, Namur, Gand, Anvers ou dans n\'importe quelle commune — nous avons un artisan partenaire près de chez vous.',
+    a: 'Dépannage.be intervient dans les 19 communes de Bruxelles, dans tout le Brabant wallon et dans tout le Brabant flamand. Indiquez votre code postal lors de la réservation : nous vous confirmons tout de suite si un artisan partenaire couvre votre adresse.',
   },
   {
     q: 'Puis-je annuler ma réservation ?',
@@ -64,30 +54,7 @@ function ChevronDownSVG() {
   )
 }
 
-/* ── Google logo ── */
-function GLogo() {
-  return (
-    <div className="review-g-logo">
-      <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-    </div>
-  )
-}
-
-/* ── Review card ── */
-function ReviewCard({ name, text }) {
-  return (
-    <div className="review-card">
-      <div className="review-card-top">
-        <GLogo />
-        <div className="review-stars">★★★★★</div>
-      </div>
-      <div className="review-name">{name}</div>
-      <div className="review-text">{text}</div>
-    </div>
-  )
-}
-
-export default function HomePage() {
+export default function HomeClient({ zonesSection }) {
   const [activeWord, setActiveWord] = useState(0)
   const [exitWord, setExitWord]   = useState(-1)
   const [openFaq, setOpenFaq]     = useState(-1)
@@ -174,16 +141,19 @@ export default function HomePage() {
         </svg>
       </section>
 
-      {/* ── PROOF BAR ── */}
+      {/* ── ENGAGEMENTS ── */}
       <section id="proof-bar">
-        <p className="proof-bar-label">⭐ Avis Google vérifiés — 4.9/5 sur 140+ avis</p>
-        <div className="reviews-track-wrap">
-          <div className="reviews-track">
-            {[...REVIEWS, ...REVIEWS].map((r, i) => (
-              <ReviewCard key={i} name={r.name} text={r.text} />
-            ))}
-          </div>
-        </div>
+        <p className="proof-bar-label">Nos engagements, écrits noir sur blanc</p>
+        <ul className="commitments">
+          {[
+            'Fourchette de prix annoncée avant le déplacement',
+            'Majoration nuit et week-end affichée, jamais cumulée',
+            'Paiement après l’intervention, facture détaillée',
+            'Vous pouvez refuser un devis sur place',
+          ].map(c => (
+            <li key={c}><CheckGreenSVG /> {c}</li>
+          ))}
+        </ul>
       </section>
 
       {/* ── HOW IT WORKS ── */}
@@ -228,41 +198,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BEFORE/AFTER ── */}
-      <section id="before-after" className="section">
-        <div className="container">
-          <h2 className="section-title">Des résultats concrets</h2>
-          <p className="section-sub">Photos prises par nos artisans lors des interventions</p>
-          <div className="ba-grid">
-            {[
-              { cls: ['ba-before-plumb','ba-after-plumb'], trade:'Plomberie', desc:'Fuite sous évier réparée — Liège', price:'109€ TTC' },
-              { cls: ['ba-before-elec','ba-after-elec'],   trade:'Électricité', desc:'Tableau remis aux normes — Namur', price:'149€ TTC' },
-              { cls: ['ba-before-drain','ba-after-drain'], trade:'Plomberie', desc:'Débouchage canalisations — Bruxelles', price:'69€ TTC' },
-              { cls: ['ba-before-hw','ba-after-hw'],       trade:'Plomberie', desc:'Chauffe-eau remplacé — Liège', price:'179€ TTC' },
-            ].map((card, i) => (
-              <div key={i} className="ba-card">
-                <div className="ba-images">
-                  <div className="ba-before">
-                    <div className={`ba-before-bg ${card.cls[0]}`} />
-                    <span className="ba-label ba-label-before">Avant</span>
-                  </div>
-                  <div className="ba-after">
-                    <div className={`ba-after-bg ${card.cls[1]}`} />
-                    <span className="ba-label ba-label-after">Après</span>
-                  </div>
-                  <div className="ba-divider" />
-                </div>
-                <div className="ba-info">
-                  <div className="ba-trade">{card.trade}</div>
-                  <div className="ba-desc">{card.desc}</div>
-                  <div className="ba-price"><CheckGreenSVG /> {card.price}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── SERVICES ── */}
       <section id="services" className="section">
         <div className="container">
@@ -270,12 +205,12 @@ export default function HomePage() {
           <p className="section-sub">Tarifs fixes, annoncés à l&apos;avance.</p>
           <div className="services-grid">
             {[
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>, name:"Fuite d'eau", price:"Dès 89€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>, name:"Débouchage", price:"Dès 69€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>, name:"Chauffe-eau", price:"Dès 129€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, name:"Panne électrique", price:"Dès 79€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="5" y="9" width="14" height="6" rx="1"/></svg>, name:"Tableau électrique", price:"Dès 119€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, name:"Serrurerie", price:"Dès 89€" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>, name:"Fuite d'eau", price:"Dès 120€" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>, name:"Débouchage", price:"Dès 130€" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>, name:"Chauffe-eau", price:"Dès 450€" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, name:"Panne électrique", price:"Dès 110€" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="5" y="9" width="14" height="6" rx="1"/></svg>, name:"Tableau électrique", price:"Dès 450€" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, name:"Serrurerie", price:"Dès 110€" },
             ].map((s, i) => (
               <Link key={i} href="/booking" className="service-card">
                 <div className="service-icon">{s.icon}</div>
@@ -312,6 +247,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      {zonesSection}
+
       {/* ── FAQ ── */}
       <section id="faq" className="section">
         <div className="container">
@@ -335,7 +272,7 @@ export default function HomePage() {
       <section id="final-cta">
         <div className="final-cta-headline">Votre artisan vous attend.</div>
         <div className="final-cta-sub">
-          Nous couvrons toute la Belgique — de Bruxelles à Liège, Namur, Gand, Anvers et au-delà.
+          Bruxelles, Brabant wallon et Brabant flamand — un artisan partenaire près de chez vous.
         </div>
         <div className="final-cta-wrap">
           <Link href="/booking" className="btn btn-white">
@@ -352,9 +289,9 @@ export default function HomePage() {
             <span className="logo-be">.be</span>
           </div>
           <div className="footer-links">
-            <a href="#">Mentions légales</a>
-            <a href="#">CGU</a>
-            <a href="#">Contact</a>
+            <Link href="/prix">Nos prix</Link>
+            <Link href="/partenaires">Nos partenaires</Link>
+            <Link href="/nl">Nederlands</Link>
           </div>
           <div className="footer-copy">© 2025 Dépannage.be — Tous droits réservés</div>
         </div>

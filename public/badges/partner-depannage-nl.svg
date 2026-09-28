@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="64" viewBox="0 0 220 64" role="img" aria-label="Partner Dépannage.be — prijs vooraf gekend">
+  <rect x="0.5" y="0.5" width="219" height="63" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-opacity="0.15"/>
+  <rect x="10" y="12" width="40" height="40" rx="9" fill="#FF6B35"/>
+  <path d="M22 33l6 6 12-13" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="25" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#1A1A2E" fill-opacity="0.6">GECONTROLEERDE PARTNER</text>
+  <text x="60" y="41" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#1A1A2E">Dépannage<tspan fill="#FF6B35">.be</tspan></text>
+  <text x="60" y="54" font-family="Inter, Arial, sans-serif" font-size="9" fill="#1A1A2E" fill-opacity="0.6">Prijs vooraf gekend</text>
+</svg>

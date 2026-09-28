@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
+import { isAdminRequest } from './lib/admin-session'
 
-export function middleware(request) {
+export async function middleware(request) {
   const { pathname } = request.nextUrl
   const hostname = request.headers.get('host') || ''
 
@@ -16,8 +17,7 @@ export function middleware(request) {
 
   // ── Protect all /admin routes except /admin/login ──
   if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
-    const session = request.cookies.get('admin_session')
-    if (!session || session.value !== 'authenticated') {
+    if (!(await isAdminRequest(request))) {
       return NextResponse.redirect(new URL('/admin/login', request.url))
     }
   }

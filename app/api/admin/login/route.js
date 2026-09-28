@@ -1,23 +1,25 @@
 import { NextResponse } from 'next/server'
+import { COOKIE, MAX_AGE, createSessionToken, passwordMatches } from '../../../../lib/admin-session'
 
 export async function POST(request) {
-  const { password } = await request.json()
+  const { password } = await request.json().catch(() => ({}))
 
-  const adminPassword = process.env.ADMIN_PASSWORD
-  if (!adminPassword) {
+  if (!process.env.ADMIN_PASSWORD) {
     return NextResponse.json({ error: 'ADMIN_PASSWORD non configuré.' }, { status: 500 })
   }
 
-  if (password !== adminPassword) {
+  if (!(await passwordMatches(password))) {
+    // Small delay to slow down guessing.
+    await new Promise(r => setTimeout(r, 600))
     return NextResponse.json({ error: 'Mot de passe incorrect.' }, { status: 401 })
   }
 
   const response = NextResponse.json({ success: true })
-  response.cookies.set('admin_session', 'authenticated', {
+  response.cookies.set(COOKIE, await createSessionToken(), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: 60 * 60 * 24, // 24 h
+    sameSite: 'strict',
+    maxAge: MAX_AGE,
     path: '/',
   })
   return response
