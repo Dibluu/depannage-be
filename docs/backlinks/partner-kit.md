@@ -1,4 +1,4 @@
-# Kit de liens partenaires — Lockey et Kiverrou
+# Kit de liens partenaires — Lockey, Kiverrou et SmithLock
 
 À transmettre aux deux serruriers. Objectif : des liens **contextuels**, depuis les pages de leur site qui parlent déjà de la même commune, vers la page équivalente de Dépannage.be. C'est le modèle qui a donné 1 700 domaines référents à TrustUp (badge « Membre de TrustUp » + liens vers les pages métier).
 
@@ -37,9 +37,27 @@ Version néerlandaise (pages `slotenmaker-…` de Kiverrou) :
 
 ## 2. Serrurerie LocKey — serrurerielockey.be
 
+Lockey n'a que 9 pages (pas de pages Jette, Ganshoren, etc. : celles-ci sont chez Smithlock, voir section 2 bis). Trois liens suffisent. Elementor : phrases à coller dans l'éditeur, pas de modification par l'API.
+
 | Page de leur site | Phrase à ajouter (le lien est entre crochets) | Cible sur Dépannage.be |
 |---|---|---|
+| `/` (section à propos) | Badge « Partenaire vérifié Dépannage.be » (section 1) | `/partenaires` |
 | `/prix-serrurerie/` | « Nos tarifs sont aussi publiés, prestation par prestation, sur la [grille de prix de Dépannage.be]. » | `/prix/serrurier` |
+| `/serrurier-uccle/` | « Prix affiché avant le déplacement : [réservez un serrurier à Uccle en ligne]. » | `/serrurier/bruxelles/uccle` |
+
+Kiverrou vise aussi Uccle : ancre descriptive ici, ancre de marque chez Kiverrou. `/serrurier-uccle/` est reliée au menu du pied de page depuis le 2 octobre 2026. Badge et lien `/prix-serrurerie/` posés le 2 octobre 2026.
+
+À corriger en même temps sur leur site (voir l'étude de la fiche) : adresse de Wemmel dans le pied de page, bouton « avis » vers la bonne fiche Google.
+
+---
+
+## 2 bis. SmithLock — smithlock.be
+
+Pages Gutenberg : les phrases peuvent être ajoutées par l'API après validation.
+
+| Page de leur site | Phrase à ajouter (le lien est entre crochets) | Cible sur Dépannage.be |
+|---|---|---|
+| `/` (à propos) | Badge « Partenaire vérifié Dépannage.be » (section 1) | `/partenaires` |
 | `/serrurier-jette/` | « Vous préférez réserver en ligne ? [Réservez un serrurier à Jette] avec le prix affiché avant le déplacement. » | `/serrurier/bruxelles/jette` |
 | `/serrurier-ganshoren/` | « Nous intervenons aussi via [Dépannage.be] pour les demandes réservées en ligne à Ganshoren. » | `/serrurier/bruxelles/ganshoren` |
 | `/serrurier-koekelberg/` | « Prix et réservation en ligne : [www.dépannage.be/serrurier/bruxelles/koekelberg]. » | `/serrurier/bruxelles/koekelberg` |
@@ -53,8 +71,6 @@ Exemple complet (Jette) :
   <a href="https://www.xn--dpannage-b1a.be/serrurier/bruxelles/jette">Réservez un serrurier à Jette</a>
   avec le prix affiché avant le déplacement.</p>
 ```
-
-À corriger en même temps sur leur site (voir l'étude de la fiche) : adresse de Wemmel dans le pied de page, bouton « avis » vers la bonne fiche Google.
 
 ---
 
@@ -75,11 +91,11 @@ Exemple complet (Jette) :
 
 ## 4. Ordre de pose conseillé
 
-| Semaine | Lockey | Kiverrou |
-|---|---|---|
-| 1 | Badge + `/prix-serrurerie/` | Badge + `/tarif-serrurier-bruxelles/` |
-| 2 | Jette, Ganshoren | Ixelles, Uccle |
-| 3 | Koekelberg, Molenbeek | Wavre, Waterloo |
-| 4 | Berchem-Sainte-Agathe | `/slotenmaker-brussel/` |
+| Semaine | Lockey | Kiverrou | SmithLock |
+|---|---|---|---|
+| 1 | Badge + `/prix-serrurerie/` | Badge + `/tarif-serrurier-bruxelles/` | Badge |
+| 2 | `/serrurier-uccle/` | Ixelles, Uccle | Jette, Ganshoren |
+| 3 | — | Wavre, Waterloo | Koekelberg, Molenbeek |
+| 4 | — | `/slotenmaker-brussel/` | Berchem-Sainte-Agathe |
 
 Contrôle : 4 à 6 semaines après, vérifier dans Search Console (Liens) que les pages sont bien vues, et relancer une mesure DataForSEO des domaines référents.
