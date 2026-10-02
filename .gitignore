@@ -1,3 +1,6 @@
 node_modules
 .next
 .env.local
+
+# IndexNow: last submitted page fingerprints (kept in the Actions cache)
+.indexnow-state.json
