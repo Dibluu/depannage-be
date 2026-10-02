@@ -13,6 +13,8 @@ export const metadata = {
   title: "Dépannage.be — L'artisan qu'il vous faut, au prix qu'on vous annonce.",
   description: 'Serrurier, plombier, électricien, chauffagiste à Bruxelles, en Brabant wallon et en Brabant flamand. Prix fixe annoncé avant l’intervention, sans surprise.',
   openGraph: { siteName: 'Dépannage.be', locale: 'fr_BE', type: 'website' },
+  // Google Search Console, URL-prefix property https://www.xn--dpannage-b1a.be/
+  verification: { google: 'hzALC8eZPvPLTnqBUdpSSkNhmb7kPMUgUDwqDnfcycM' },
 }
 
 export default function RootLayout({ children }) {
