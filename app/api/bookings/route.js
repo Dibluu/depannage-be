@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server'
 import { loadCatalog, FEES, surchargeFor } from '../../../lib/pricing'
-import { communeByPostcode } from '../../../lib/geo'
+import { communeByPostcode, communeName } from '../../../lib/geo'
 
 // Booking intake. Prices are recomputed here from the catalogue — the client's numbers are never trusted.
 // Storage: Supabase `bookings` (service role key if set, otherwise anon key + insert policy).
-// Notification: Resend email to BOOKING_NOTIFY_EMAIL when RESEND_API_KEY is set.
+// Notification: Resend email to BOOKING_NOTIFY_EMAIL when RESEND_API_KEY is set, with a wa.me link that
+// opens WhatsApp on the customer's number with the recap pre-filled (sent by hand from the business account).
 
 const TRADES = ['Serrurerie', 'Plomberie', 'Électricité', 'Chauffage', 'Autre']
 const clean = (v, max = 300) => String(v ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max)
@@ -35,7 +36,48 @@ async function uploadPhoto(ref, dataUrl) {
   return res?.ok ? path : null
 }
 
-async function notify(b) {
+const RECAP = {
+  fr: {
+    trades: { Serrurerie: 'Serrurerie', Plomberie: 'Plomberie', Électricité: 'Électricité', Chauffage: 'Chauffage', Autre: 'Intervention' },
+    slots: { matin: 'matin (8h–12h)', 'apres-midi': 'après-midi (12h–17h)', soir: 'soir (17h–20h)' },
+    urgent: 'dès que possible',
+    hello: (name, ref) => `Bonjour ${name}, ici Dépannage.be. Nous avons bien reçu votre demande ${ref} :`,
+    sep: ' : ', when: 'Quand', where: 'Adresse', price: 'Prix annoncé', quote: 'sur devis',
+    next: 'L’artisan vous appelle pour confirmer l’heure de passage.',
+  },
+  nl: {
+    trades: { Serrurerie: 'Slotenmaker', Plomberie: 'Loodgieter', Électricité: 'Elektricien', Chauffage: 'Verwarming', Autre: 'Interventie' },
+    slots: { matin: 'ochtend (8u–12u)', 'apres-midi': 'namiddag (12u–17u)', soir: 'avond (17u–20u)' },
+    urgent: 'zo snel mogelijk',
+    hello: (name, ref) => `Goedendag ${name}, hier Dépannage.be. We hebben uw aanvraag ${ref} goed ontvangen:`,
+    sep: ': ', when: 'Wanneer', where: 'Adres', price: 'Aangekondigde prijs', quote: 'op offerte',
+    next: 'De vakman belt u om het uur van zijn bezoek te bevestigen.',
+  },
+}
+
+// Belgian numbers as typed by customers (0470…, +32…, 0032…) → digits for wa.me.
+function waNumber(phone) {
+  const d = phone.replace(/\D/g, '').replace(/^00/, '')
+  return d.startsWith('0') ? `32${d.slice(1)}` : d
+}
+
+function whatsappLink(b, label, communeLabel) {
+  const r = RECAP[b.lang]
+  const day = b.urgent ? r.urgent : `${new Date(`${b.slot_date}T12:00:00`).toLocaleDateString(b.lang === 'nl' ? 'nl-BE' : 'fr-BE', { weekday: 'long', day: 'numeric', month: 'long' })}, ${r.slots[b.slot_time]}`
+  const text = [
+    r.hello(b.name.split(' ')[0], b.ref),
+    `• ${r.trades[b.trade]}${r.sep}${label}`,
+    `• ${r.when}${r.sep}${day}`,
+    `• ${r.where}${r.sep}${b.address}, ${b.postcode} ${communeLabel}`,
+    `• ${r.price}${r.sep}${b.price_min ? `${b.price_min} – ${b.price_max} €` : r.quote}`,
+    r.next,
+  ].join('\n')
+  return `https://wa.me/${waNumber(b.phone)}?text=${encodeURIComponent(text)}`
+}
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+
+async function notify(b, whatsapp) {
   const key = process.env.RESEND_API_KEY
   const to = process.env.BOOKING_NOTIFY_EMAIL
   if (!key || !to) return false
@@ -47,6 +89,8 @@ async function notify(b) {
     `${b.address}, ${b.postcode} ${b.commune}${b.floor ? ` (${b.floor})` : ''}`,
     b.description && `Précisions : ${b.description}`,
   ].filter(Boolean)
+  const html = `<p>${lines.map(esc).join('<br>')}</p>`
+    + `<p><a href="${esc(whatsapp)}" style="display:inline-block;background:#25D366;color:#fff;padding:12px 20px;border-radius:8px;font-weight:bold;text-decoration:none">Envoyer le récapitulatif sur WhatsApp</a></p>`
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
@@ -55,7 +99,8 @@ async function notify(b) {
       from: process.env.BOOKING_FROM_EMAIL || 'Dépannage.be <onboarding@resend.dev>',
       to: [to],
       subject: `${b.urgent ? '⚡ ' : ''}Nouvelle demande ${b.trade} — ${b.commune} (${b.ref})`,
-      text: lines.join('\n'),
+      text: `${lines.join('\n')}\n\nRécapitulatif WhatsApp : ${whatsapp}`,
+      html,
     }),
   }).catch(() => null)
   return !!res?.ok
@@ -114,6 +159,8 @@ export async function POST(request) {
     status: 'nouveau',
   }
 
+  const whatsapp = whatsappLink(booking, prestation ? prestation[booking.lang] : booking.problem, communeName(commune, booking.lang))
+
   const res = await supabaseFetch('/rest/v1/bookings', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' },
@@ -121,7 +168,7 @@ export async function POST(request) {
   })
   if (!res) {
     // No database configured: the email is then the only record — fail loudly if it can't be sent.
-    if (await notify(booking)) return NextResponse.json({ ref })
+    if (await notify(booking, whatsapp)) return NextResponse.json({ ref })
     console.error('bookings: neither Supabase nor Resend configured', ref)
     return NextResponse.json({ error: 'not_configured' }, { status: 503 })
   }
@@ -138,7 +185,7 @@ export async function POST(request) {
       body: JSON.stringify({ photo_url: photoPath }),
     })
   }
-  await notify({ ...booking })
+  await notify(booking, whatsapp)
 
   return NextResponse.json({ ref })
 }
