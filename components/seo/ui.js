@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { UI } from '../../lib/i18n'
-import { PHONE, PHONE_HREF } from '../../lib/site'
+import { PHONE, PHONE_HREF, LEGAL } from '../../lib/site'
 import { euro } from '../../lib/seo/content/shared'
 import { TRADES } from '../../lib/trades'
 import { REGIONS } from '../../lib/geo'
-import { tradeUrl, regionUrl, pricesUrl, bookingUrl } from '../../lib/seo/routes'
+import { tradeUrl, regionUrl, pricesUrl, bookingUrl, legalUrl } from '../../lib/seo/routes'
 import { activeRegions, activeTrades } from '../../lib/seo/rollout'
 
 export function JsonLd({ data }) {
@@ -49,6 +49,10 @@ export function SiteFooter({ lang }) {
         <div className="space-y-2">
           <div className="text-lg font-extrabold text-white">Dépannage<span className="text-orange">.be</span></div>
           <p className="text-sm">{lang === 'nl' ? 'Brussel, Waals-Brabant en Vlaams-Brabant.' : 'Bruxelles, Brabant wallon et Brabant flamand.'}</p>
+          <address className="text-sm not-italic">
+            {LEGAL.street}, {LEGAL.postcode} {LEGAL.city[lang]}
+            {PHONE && <><br /><a href={PHONE_HREF} className="hover:text-white">{PHONE}</a></>}
+          </address>
         </div>
         <div className="space-y-2 text-sm">
           <div className="font-bold text-white">{t.regions}</div>
@@ -72,7 +76,8 @@ export function SiteFooter({ lang }) {
         </div>
       </Container>
       <Container className="flex flex-wrap gap-4 border-t border-white/10 py-4 text-xs text-white/50">
-        <span>© {new Date().getFullYear()} Dépannage.be</span>
+        <span>© {new Date().getFullYear()} Dépannage.be · {LEGAL.owner} · {lang === 'nl' ? 'KBO' : 'BCE'} {LEGAL.bce}</span>
+        <Link href={legalUrl(lang)} className="hover:text-white">{lang === 'nl' ? 'Wettelijke vermeldingen en privacy' : 'Mentions légales et vie privée'}</Link>
         <Link href={lang === 'nl' ? '/nl/partners' : '/partenaires'} className="hover:text-white">{lang === 'nl' ? 'Onze partners' : 'Nos artisans partenaires'}</Link>
       </Container>
     </footer>

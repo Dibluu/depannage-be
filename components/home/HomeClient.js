@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
+import { PHONE, PHONE_HREF, LEGAL } from '../../lib/site'
 
 const TRADES = ['Plombier', 'Électricien', 'Serrurier', 'Chauffagiste', 'Menuisier']
 
@@ -292,8 +293,12 @@ export default function HomeClient({ zonesSection }) {
             <Link href="/prix">Nos prix</Link>
             <Link href="/partenaires">Nos partenaires</Link>
             <Link href="/nl">Nederlands</Link>
+            <Link href="/mentions-legales">Mentions légales et vie privée</Link>
           </div>
-          <div className="footer-copy">© 2025 Dépannage.be — Tous droits réservés</div>
+          <div className="footer-copy">
+            © {new Date().getFullYear()} Dépannage.be · {LEGAL.owner} · BCE {LEGAL.bce}<br />
+            {LEGAL.street}, {LEGAL.postcode} {LEGAL.city.fr}{PHONE && <> · <a href={PHONE_HREF}>{PHONE}</a></>}
+          </div>
         </div>
       </footer>
 

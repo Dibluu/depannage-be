@@ -6,6 +6,7 @@ import { FEES, surchargeFor } from '../../lib/pricing'
 import { TRADES } from '../../lib/trades'
 import { communeByPostcode, communeName } from '../../lib/geo'
 import { PHONE, PHONE_HREF, WHATSAPP } from '../../lib/site'
+import { legalUrl } from '../../lib/seo/routes'
 
 /* ─── Copy ───────────────────────────────────────────────── */
 const T = {
@@ -68,6 +69,7 @@ const T = {
     submit: 'Confirmer ma demande',
     sending: 'Envoi…',
     privacy: 'Vos données servent uniquement à organiser l’intervention. Elles ne sont jamais revendues.',
+    privacyLink: 'Vie privée',
     error: 'La demande n’a pas pu être envoyée. Vérifiez votre connexion et réessayez.',
     errorCall: 'Ou appelez-nous directement :',
     done: 'Demande envoyée',
@@ -138,6 +140,7 @@ const T = {
     submit: 'Mijn aanvraag bevestigen',
     sending: 'Verzenden…',
     privacy: 'Uw gegevens dienen enkel om de interventie te regelen. Ze worden nooit verkocht.',
+    privacyLink: 'Privacy',
     error: 'De aanvraag kon niet verzonden worden. Controleer uw verbinding en probeer opnieuw.',
     errorCall: 'Of bel ons rechtstreeks:',
     done: 'Aanvraag verzonden',
@@ -447,7 +450,9 @@ export default function BookingFlow({ lang = 'fr', catalog, initial = {} }) {
             <Btn type="submit" disabled={status === 'sending' || !contact.name.trim() || contact.phone.replace(/\D/g, '').length < 8 || !contact.address.trim()}>
               {status === 'sending' ? t.sending : `${t.submit} →`}
             </Btn>
-            <p className="mt-2 text-center text-[11px] text-navy/40">{t.privacy}</p>
+            <p className="mt-2 text-center text-[11px] text-navy/40">
+              {t.privacy} <Link href={`${legalUrl(lang)}#${lang === 'nl' ? 'privacy' : 'confidentialite'}`} className="underline">{t.privacyLink}</Link>
+            </p>
           </form>
         )}
 

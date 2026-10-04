@@ -1,7 +1,7 @@
 import { TRADES } from '../lib/trades'
 import { publishableCommunes, isPublishable } from '../lib/seo/publish'
 import { activeTrades, activeRegions, isActive } from '../lib/seo/rollout'
-import { absolute, ANNUAIRE_PATH, tradeUrl, regionUrl, communeUrl, pricesUrl } from '../lib/seo/routes'
+import { absolute, ANNUAIRE_PATH, tradeUrl, regionUrl, communeUrl, pricesUrl, legalUrl } from '../lib/seo/routes'
 
 // Only published (active-wave) pages are listed, with their FR/NL alternates.
 const LAST_CONTENT_UPDATE = new Date('2026-09-28')
@@ -21,6 +21,8 @@ export default function sitemap() {
     entry('/partenaires', { fr: '/partenaires', nl: '/nl/partners' }, 0.5),
     entry('/nl/partners', { fr: '/partenaires', nl: '/nl/partners' }, 0.4),
     entry(ANNUAIRE_PATH, { fr: ANNUAIRE_PATH }, 0.6),
+    entry(legalUrl('fr'), { fr: legalUrl('fr'), nl: legalUrl('nl') }, 0.2),
+    entry(legalUrl('nl'), { fr: legalUrl('fr'), nl: legalUrl('nl') }, 0.2),
   ]
   for (const id of Object.keys(TRADES)) {
     const alt = { fr: pricesUrl('fr', id), nl: pricesUrl('nl', id) }
