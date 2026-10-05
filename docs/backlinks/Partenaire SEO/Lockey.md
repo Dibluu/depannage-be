@@ -62,14 +62,40 @@ Constat : cette page est redirigée vers l'accueil par un réglage SEOPress. Vé
 
 Opportunité : le texte de cette page (≈ 1 200 mots sur le dépannage de serrure, presque rien en commun avec l'accueil) pourrait être reconstruit dans Elementor pour en refaire une vraie page.
 
+### 4 octobre — Sécurité : installation de Wordfence
+
+- Extension de sécurité Wordfence (version gratuite 9.0.2) installée et activée. Le site n'avait aucune extension de sécurité. Le site reste accessible normalement (accueil, contact, tarifs, connexion vérifiés).
+- Comptes administrateurs vérifiés : deux seulement, le compte LocKey (propriétaire, 2018) et le compte de l'agence (créé le 29 septembre 2026). Aucun compte inconnu.
+- Ancienne redirection `h/6791837.html` → `/disallow/` : cette adresse renvoie vers une page qui n'existe pas (404). C'est le signe d'une ancienne adresse de spam neutralisée à la main. Elle ne présente pas de risque.
+- Réglage Wordfence : à l'installation, Wordfence bloque par défaut les « mots de passe d'application », l'accès utilisé par l'agence pour intervenir sur le site. Ce blocage a été levé le 5 octobre (Wordfence → Toutes les options) et l'accès a été vérifié.
+- Analyse complète Wordfence (4 octobre, 21 h 17) : 17 178 fichiers, 12 extensions, 3 thèmes, 9 publications et 8 312 adresses analysés. **Aucun logiciel malveillant, aucun fichier modifié, aucun lien suspect.** Le site est sain.
+- Seuls points relevés : 4 extensions pas à jour. SEOPress 10.2 → 10.3 (jugé critique par Wordfence, donc probablement un correctif de sécurité), Elementor 4.3.2 → 4.3.3, Elementor Pro 4.3.0 → 4.3.1, WP Mail SMTP 4.9.0 → 4.10.0. Ce sont des mises à jour mineures.
+- 5 octobre : SEOPress (et SEOPress PRO) passent en 10.3, Elementor en 4.3.3 et WP Mail SMTP en 4.10.0. Elementor Pro est resté en 4.3.0 : le site n'a pas de licence Elementor Pro active, donc WordPress ne peut pas télécharger la mise à jour (« La mise à jour automatique n'est pas disponible pour cette extension »). Contrôle après mise à jour sur le site en ligne : accueil, contact, tarifs et Uccle répondent normalement, aucun message d'erreur, mise en page de l'accueil identique. Le badge, le lien vers Dépannage.be, la page Contact en « index, follow » et la redirection `/prise-de-rendez-vous/` sont toujours en place.
+
+**Recommandation au client : renouveler la licence Elementor Pro.** Sans licence active, Elementor Pro ne reçoit plus ni mises à jour ni correctifs de sécurité. Rester en 4.3.0 ne présente pas de risque immédiat (Wordfence le classe en niveau moyen), mais l'écart grandira avec le temps. Ne jamais installer une copie d'Elementor Pro obtenue ailleurs que sur le compte Elementor officiel : les versions « gratuites » d'extensions payantes sont une source classique de logiciels malveillants.
+
+### 5 octobre — Page Uccle et page Contact
+
+Sauvegarde préalable des pages (copie locale hors dépôt).
+
+| # | Intervention | Avant | Après | Pourquoi |
+|---|---|---|---|---|
+| 6 | Lien vers Dépannage.be sur la page Uccle | — | Phrase « Prix affiché avant le déplacement : réservez un serrurier à Uccle en ligne. » à la fin du paragraphe d'introduction, vers `https://www.dépannage.be/serrurier/bruxelles/uccle` | Deuxième semaine du partenariat. L'ancre est descriptive, différente de celle de Kiverrou vers la même page. |
+| 7 | Lien interne « Nos tarifs » corrigé sur la page Uccle | L'icône pointait vers `/tarifs-serrurier/`, une ancienne adresse redirigée | Elle pointe directement vers `/prix-serrurerie/` | Évite une redirection inutile à chaque visite et à chaque passage de Google. |
+| 8 | Titre Google de la page Contact raccourci | « Serrurier Bruxelles Contact - Formulaire en ligne disponible 24H/7J » (67 caractères, coupé dans Google) | « Contact Serrurier Bruxelles LocKey - Joignable 24h/24, 7j/7 » (59 caractères) | Le titre s'affiche en entier dans les résultats et contient le nom de la marque. |
+| 9 | Description Google de la page Contact raccourcie | 205 caractères, coupée dans Google | « Contactez Serrurerie LocKey jour et nuit, à Bruxelles et dans le Brabant. Appelez-nous ou écrivez-nous via le formulaire en ligne : réponse rapide. » (147 caractères) | La description s'affiche en entier, ce qui donne envie de cliquer. |
+
+Vérifié sur le site en ligne : le lien vers Dépannage.be et le lien « Nos tarifs » sont en place sur la page Uccle, et le nouveau titre et la nouvelle description de la page Contact apparaissent dans le code de la page.
+
 ---
 
 ## Reste à faire
 
 | Quand | Action | Statut |
 |---|---|---|
-| Octobre, sem. 1 | Analyse de sécurité ponctuelle (Wordfence, version gratuite). Vérifier au passage l'ancienne redirection SEOPress `h/6791837.html` → `/disallow/`, qui ressemble à une trace de spam | À faire |
-| Octobre, sem. 2 à 4 | Lien depuis `/serrurier-uccle/` vers Dépannage.be | Possible maintenant que la page est reliée au menu |
+| Octobre | Décision du client sur le renouvellement de la licence Elementor Pro ; si renouvelée, mettre à jour en 4.3.1 | En attente du client |
+| Octobre | Relancer une analyse Wordfence (seul Elementor Pro devrait encore ressortir) | À faire dans l'admin |
+| Octobre | Données structurées « entreprise locale » (serrurier, adresse, téléphone, horaires 24h/24) via SEOPress PRO → Entreprise locale. Aujourd'hui, le site se déclare comme une « personne ». Il faut d'abord confirmer l'adresse officielle, identique à celle de la fiche Google : Avenue de Scheut 245, 1070 Anderlecht sur l'accueil, alors qu'une adresse à Wemmel apparaît dans le pied de page | À confirmer avec le partenaire |
 | Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette) : Lockey est déjà 8e sur « serrurier wemmel » avec sa seule page d'accueil | À planifier |
 | Mois 2 et 3 | Reconstruire `/depannage-serrure/` dans Elementor à partir de son ancien texte, puis retirer la redirection | À planifier |
 | Mois 2 et 3 | Versions néerlandaise et anglaise | À planifier |
