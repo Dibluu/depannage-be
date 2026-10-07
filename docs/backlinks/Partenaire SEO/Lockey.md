@@ -124,16 +124,45 @@ Vérifié sur le site en ligne : les deux anciennes pages renvoient vers l'accue
 
 Effet attendu : l'alerte disparaît de la Search Console sous 1 à 3 semaines, et la valeur des liens qui pointaient vers ces anciennes pages (dont celui de Kiverrou) profite à l'accueil au lieu d'être perdue.
 
+### 7 octobre — Nouvelle spécialité : réponses du propriétaire et première page
+
+Réponses du propriétaire sur les services réellement proposés :
+- **Portes blindées :** ouverture, réparation et remplacement des mécanismes, blindage de porte existante. Pas de pose de porte blindée neuve.
+- **Coffres-forts :** surtout de l'ouverture, changement de combinaison quand c'est possible, et vente sur demande du client.
+- **Fenêtres et châssis :** remplacement et réparation des serrures, ajout de verrous de sécurité anti-effraction, poignées à clé (pour empêcher les enfants d'ouvrir une fenêtre). À partir de 95 € hors déplacement.
+
+Page « Porte blindée à Bruxelles » (`/porte-blindee-bruxelles/`) créée en brouillon pour validation. Même mise en page que les autres pages de service du site, images de voiture retirées. Contenu : ouverture de porte blindée, réparation et remplacement des mécanismes, blindage de porte existante, prix réels de la grille tarifaire (ouverture claquée 180–270 €, verrouillée 310–475 €, cylindre dès 95 €, blindage dès 220 €), questions fréquentes, liens vers les tarifs, le contact et la page Uccle. Titre Google : « Porte blindée Bruxelles : ouverture, réparation | LocKey ».
+
+### 7 octobre — Nouvelle spécialité en ligne : 3 pages de service, menu et accueil
+
+Validé par le propriétaire. Adresse officielle confirmée : **Avenue de Limburg Stirum 115, 1780 Wemmel**. Licence Elementor Pro renouvelée.
+
+| # | Intervention | Détail |
+|---|---|---|
+| 10 | Page « Porte blindée à Bruxelles » publiée | `/porte-blindee-bruxelles/` : ouverture, réparation et remplacement des mécanismes, blindage de porte existante, prix réels, questions fréquentes. Titre Google « Porte blindée Bruxelles : ouverture, réparation \| LocKey » |
+| 11 | Page « Coffre-fort à Bruxelles » publiée | `/coffre-fort-bruxelles/` : ouverture, changement de combinaison, vente et installation sur demande (pose encastrable dès 425 €), questions fréquentes |
+| 12 | Page « Sécurité des fenêtres à Bruxelles » publiée | `/securite-fenetre-bruxelles/` : réparation de serrures de fenêtres et châssis, verrous anti-effraction, poignées à clé pour la sécurité des enfants, dès 95 € hors déplacement |
+| 13 | Menu principal | Accueil · Portes blindées · Coffres-forts · Fenêtres · Tarifs · Contact |
+| 14 | Accueil réorienté | Nouveau titre Google « Serrurier Bruxelles LocKey : porte blindée, coffre-fort 24/7 » et nouvelle description. Accroche du haut de page sur les trois spécialités. Le grand bloc « serrurier automobile » est remplacé par un bloc porte blindée ; la voiture garde une phrase avec un lien vers sa page. Les blocs coffre-fort et protection contre le cambriolage renvoient vers les nouvelles pages |
+| 15 | Adresse corrigée sur l'accueil | « Avenue de Scheut 245 - 1070 Bruxelles » remplacé par l'adresse officielle de Wemmel, identique à la page Contact |
+
+Les trois pages reprennent la mise en page des pages de service existantes, sans images de voiture. Elles se renvoient l'une vers l'autre et vers les tarifs, le contact et la page Uccle. La page voiture reste en ligne, sans être mise en avant.
+
+Vérifié sur le site en ligne : les trois pages répondent, sont indexables, figurent dans le plan du site et ont leurs styles. Le menu affiche les six entrées. Sur l'accueil, les nouveaux liens, le nouveau titre et l'adresse de Wemmel sont en place, et le badge partenaire est toujours là.
+
+Effet attendu : Google a maintenant une page dédiée pour chaque spécialité, ce qu'il lui faut pour afficher Lockey sur « porte blindée bruxelles », « coffre fort bruxelles » ou « sécurité fenêtre ». Les premières positions apparaissent en général après 4 à 8 semaines. La visibilité sur la voiture va baisser progressivement, comme demandé.
+
 ---
 
 ## Reste à faire
 
 | Quand | Action | Statut |
 |---|---|---|
-| Octobre | Décision du client sur le renouvellement de la licence Elementor Pro ; si renouvelée, mettre à jour en 4.3.1 | En attente du client |
-| Octobre | Relancer une analyse Wordfence (seul Elementor Pro devrait encore ressortir) | À faire dans l'admin |
-| Octobre | Données structurées « entreprise locale » (serrurier, adresse, téléphone, horaires 24h/24) via SEOPress PRO → Entreprise locale. Aujourd'hui, le site se déclare comme une « personne ». Il faut d'abord confirmer l'adresse officielle, identique à celle de la fiche Google : Avenue de Scheut 245, 1070 Anderlecht sur l'accueil, alors qu'une adresse à Wemmel apparaît dans le pied de page | À confirmer avec le partenaire |
-| Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette). Une fois la page Wemmel créée, faire pointer la redirection `serrurier-wemmel` vers elle : Lockey est déjà 8e sur « serrurier wemmel » avec sa seule page d'accueil | À planifier |
+| Octobre | Mettre à jour Elementor Pro (4.3.0 → 4.3.1) maintenant que la licence est renouvelée | À faire dans l'admin |
+| Octobre | Données structurées « entreprise locale » dans SEOPress PRO (serrurier, adresse de Wemmel, téléphone, 24h/24) et passer le Knowledge Graph de « Personne » à « Organisation » | À faire dans l'admin |
+| Octobre | Relancer une analyse Wordfence | À faire dans l'admin |
+| Octobre | Demander l'indexation des 3 nouvelles pages dans la Search Console (Inspection de l'URL) | À faire |
+| Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette). Une fois la page Wemmel créée, faire pointer la redirection `serrurier-wemmel` vers elle | À planifier |
 | Mois 2 et 3 | Reconstruire `/depannage-serrure/` dans Elementor à partir de son ancien texte, puis retirer la redirection | À planifier |
 | Mois 2 et 3 | Versions néerlandaise et anglaise | À planifier |
-| Mi-novembre | Nouvelle mesure DataForSEO et comparaison avec la situation de départ | À planifier |
+| Mi-novembre | Nouvelle mesure DataForSEO et comparaison avec la situation de départ, y compris sur les nouvelles spécialités | À planifier |
