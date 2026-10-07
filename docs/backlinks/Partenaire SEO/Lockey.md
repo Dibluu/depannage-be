@@ -152,6 +152,20 @@ Vérifié sur le site en ligne : les trois pages répondent, sont indexables, fi
 
 Effet attendu : Google a maintenant une page dédiée pour chaque spécialité, ce qu'il lui faut pour afficher Lockey sur « porte blindée bruxelles », « coffre fort bruxelles » ou « sécurité fenêtre ». Les premières positions apparaissent en général après 4 à 8 semaines. La visibilité sur la voiture va baisser progressivement, comme demandé.
 
+### 7 octobre — Retouches de design des pages de service
+
+Validé par le client. Texte, titres et adresses des pages inchangés (sauvegarde préalable).
+
+| # | Intervention | Pourquoi |
+|---|---|---|
+| 16 | Entrée « Accueil » retirée du menu principal (le logo ramène déjà à l'accueil) | Avec six entrées, « Contact » passait à la ligne sur ordinateur. Le menu tient de nouveau sur une ligne. |
+| 17 | Texte aligné à gauche sur les 3 pages de service | Le texte justifié étirait les titres avec de grands espaces. |
+| 18 | Boutons « +32 477 50 44 48 » (appel direct) et « Obtenir un devis » ajoutés deux fois sur chaque page de service : sous le bandeau d'urgence et après les prix | Les pages n'avaient aucun bouton d'appel. Mêmes boutons verts que sur l'accueil. |
+
+Vérifié sur capture d'écran et dans le code en ligne : menu sur une ligne, deux boutons d'appel et deux boutons de devis par page.
+
+Demande faite au client : de vraies photos de ses interventions, pour remplacer les images génériques de 2018.
+
 ---
 
 ## Reste à faire
@@ -161,7 +175,8 @@ Effet attendu : Google a maintenant une page dédiée pour chaque spécialité, 
 | Octobre | Mettre à jour Elementor Pro (4.3.0 → 4.3.1) maintenant que la licence est renouvelée | À faire dans l'admin |
 | Octobre | Données structurées « entreprise locale » dans SEOPress PRO (serrurier, adresse de Wemmel, téléphone, 24h/24) et passer le Knowledge Graph de « Personne » à « Organisation » | À faire dans l'admin |
 | Octobre | Relancer une analyse Wordfence | À faire dans l'admin |
-| Octobre | Demander l'indexation des 3 nouvelles pages dans la Search Console (Inspection de l'URL) | À faire |
+| Octobre | Recevoir les photos du serrurier et les intégrer aux pages de service et à l'accueil | En attente du client |
+| Octobre | Vérifier l'apparition des données « entreprise locale » (module SEOPress à activer, Knowledge Graph en « Organisation ») | À vérifier |
 | Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette). Une fois la page Wemmel créée, faire pointer la redirection `serrurier-wemmel` vers elle | À planifier |
 | Mois 2 et 3 | Reconstruire `/depannage-serrure/` dans Elementor à partir de son ancien texte, puis retirer la redirection | À planifier |
 | Mois 2 et 3 | Versions néerlandaise et anglaise | À planifier |
