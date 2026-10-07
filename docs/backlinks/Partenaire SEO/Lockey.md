@@ -87,6 +87,43 @@ Sauvegarde préalable des pages (copie locale hors dépôt).
 
 Vérifié sur le site en ligne : le lien vers Dépannage.be et le lien « Nos tarifs » sont en place sur la page Uccle, et le nouveau titre et la nouvelle description de la page Contact apparaissent dans le code de la page.
 
+### 5 octobre — Demande du client : changer de spécialité
+
+Le propriétaire souhaite que Lockey ne soit plus mis en avant sur les clés et l'ouverture de voiture, mais sur : ouverture de portes blindées, coffres-forts, blindage et sécurisation de portes existantes, sécurisation de fenêtres.
+
+Données relevées le jour même (Google Belgique, recherches par mois) :
+
+| Recherche | Volume | Lockey aujourd'hui |
+|---|---|---|
+| coffre fort bruxelles | 210 | absent du top 20 |
+| porte blindée bruxelles | 140 | absent du top 20 |
+| porte blindée (toute la Belgique) | 590 | absent du top 20 |
+| serrure 3 points / serrure multipoint | 140 / 110 | absent du top 20 |
+| sécurité fenêtre / verrou fenêtre | 90 / 70 | – |
+| porte anti effraction / cylindre de sécurité | 50 / 50 | – |
+| serrurier automobile + voiture + clé de voiture + double clé voiture | 210 + 110 + 170 + 140 | absent du top 20 ce jour (1er selon l'audit du 2 octobre : la position varie) |
+
+« coffre fort » seul (2 400 recherches) vise surtout l'achat d'un coffre en magasin ou la location : ce n'est pas la bonne cible pour un serrurier.
+
+### 7 octobre — Alerte Google Search Console : pages introuvables (404)
+
+Google a signalé 3 adresses en erreur 404 :
+
+| Adresse | Cause | Correctif |
+|---|---|---|
+| `/serrurier-ixelles/` | Ancienne page supprimée définitivement. Kiverrou y fait encore un lien depuis sa page Ixelles. | Redirection 301 vers l'accueil |
+| `/serrurier-wemmel/` | Ancienne page supprimée, encore connue de Google (Lockey est 8e sur « serrurier wemmel ») | Redirection 301 vers l'accueil, à faire pointer vers la future page Wemmel quand elle existera |
+| `/wp-content/plugins/*` | Adresse technique testée par Google, ce n'est pas une page | Aucune action, sans conséquence |
+
+Autres corrections du même jour :
+- La redirection SEOPress `sitemaps/page.xml` envoyait vers une adresse inexistante. Elle pointe maintenant vers le plan du site officiel `/sitemaps.xml`.
+- Search Console : 3 plans du site étaient déclarés pour le même contenu. Seul `/sitemaps.xml` est conservé.
+- Correction des erreurs demandée à Google (« Valider la correction »).
+
+Vérifié sur le site en ligne : les deux anciennes pages renvoient vers l'accueil (301, avec ou sans barre finale), l'ancien plan du site renvoie vers `/sitemaps.xml`, et les pages principales répondent normalement.
+
+Effet attendu : l'alerte disparaît de la Search Console sous 1 à 3 semaines, et la valeur des liens qui pointaient vers ces anciennes pages (dont celui de Kiverrou) profite à l'accueil au lieu d'être perdue.
+
 ---
 
 ## Reste à faire
@@ -96,7 +133,7 @@ Vérifié sur le site en ligne : le lien vers Dépannage.be et le lien « Nos ta
 | Octobre | Décision du client sur le renouvellement de la licence Elementor Pro ; si renouvelée, mettre à jour en 4.3.1 | En attente du client |
 | Octobre | Relancer une analyse Wordfence (seul Elementor Pro devrait encore ressortir) | À faire dans l'admin |
 | Octobre | Données structurées « entreprise locale » (serrurier, adresse, téléphone, horaires 24h/24) via SEOPress PRO → Entreprise locale. Aujourd'hui, le site se déclare comme une « personne ». Il faut d'abord confirmer l'adresse officielle, identique à celle de la fiche Google : Avenue de Scheut 245, 1070 Anderlecht sur l'accueil, alors qu'une adresse à Wemmel apparaît dans le pied de page | À confirmer avec le partenaire |
-| Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette) : Lockey est déjà 8e sur « serrurier wemmel » avec sa seule page d'accueil | À planifier |
+| Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette). Une fois la page Wemmel créée, faire pointer la redirection `serrurier-wemmel` vers elle : Lockey est déjà 8e sur « serrurier wemmel » avec sa seule page d'accueil | À planifier |
 | Mois 2 et 3 | Reconstruire `/depannage-serrure/` dans Elementor à partir de son ancien texte, puis retirer la redirection | À planifier |
 | Mois 2 et 3 | Versions néerlandaise et anglaise | À planifier |
 | Mi-novembre | Nouvelle mesure DataForSEO et comparaison avec la situation de départ | À planifier |
