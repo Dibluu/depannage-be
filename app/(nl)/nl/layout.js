@@ -13,6 +13,7 @@ export const metadata = {
   title: 'Dépannage.be — De vakman die u nodig hebt, aan de prijs die we aankondigen.',
   description: 'Slotenmaker, loodgieter, elektricien, chauffagist in Brussel en Vlaams-Brabant. Vaste prijs gekend vóór de interventie.',
   openGraph: { siteName: 'Dépannage.be', locale: 'nl_BE', type: 'website' },
+  twitter: { card: 'summary_large_image' },
 }
 
 export default function NlLayout({ children }) {
