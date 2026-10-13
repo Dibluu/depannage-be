@@ -166,6 +166,23 @@ Vérifié sur capture d'écran et dans le code en ligne : menu sur une ligne, de
 
 Demande faite au client : de vraies photos de ses interventions, pour remplacer les images génériques de 2018.
 
+### 13 octobre — Vraies photos d'intervention
+
+Le propriétaire a envoyé 14 photos et 1 vidéo de ses interventions, toutes sur des portes et des serrures. 10 photos retenues : deux doublons écartés, une photo où l'on voit la rue, une serrure de porte d'immeuble peu parlante. La vidéo n'est pas utilisée, pour ne pas alourdir la page.
+
+Préparation : photos allégées (1 200 × 1 600 px, 100 à 380 Ko) et métadonnées supprimées. Les photos partagées n'avaient pas de localisation GPS. Noms de fichiers et descriptions utiles pour Google, par exemple `remplacement-cylindre-porte-appartement-bruxelles.jpg` décrite « Cylindre remplacé sur une porte d'appartement à Bruxelles ».
+
+| # | Intervention | Où |
+|---|---|---|
+| 19 | 10 photos ajoutées à la médiathèque, avec leurs descriptions | Médiathèque WordPress |
+| 20 | Les deux anciennes images de 2018 remplacées par de vraies photos (rosace de protection d'une porte blindée, cylindre usé avant remplacement) | `/porte-blindee-bruxelles/` |
+| 21 | Galerie « Nos interventions récentes sur des portes blindées » : 8 photos, avec un avant/après de réparation de serrure électrique Cisa | `/porte-blindee-bruxelles/`, avant la partie blindage et prix |
+| 22 | Ancienne icône du bloc porte blindée remplacée par une vraie photo de serrure multipoints | Accueil |
+
+Pourquoi : de vraies photos rassurent les clients (elles prouvent que l'entreprise fait ces interventions) et peuvent apparaître dans Google Images.
+
+Vérifié sur capture d'écran : photos et galerie affichées correctement. Sauvegarde préalable des pages.
+
 ---
 
 ## Reste à faire
@@ -175,7 +192,7 @@ Demande faite au client : de vraies photos de ses interventions, pour remplacer 
 | Octobre | Mettre à jour Elementor Pro (4.3.0 → 4.3.1) maintenant que la licence est renouvelée | À faire dans l'admin |
 | Octobre | Données structurées « entreprise locale » dans SEOPress PRO (serrurier, adresse de Wemmel, téléphone, 24h/24) et passer le Knowledge Graph de « Personne » à « Organisation » | À faire dans l'admin |
 | Octobre | Relancer une analyse Wordfence | À faire dans l'admin |
-| Octobre | Recevoir les photos du serrurier et les intégrer aux pages de service et à l'accueil | En attente du client |
+| Octobre | Recevoir des photos de coffres-forts et de fenêtres sécurisées (3 ou 4 de chaque) pour les pages Coffres-forts et Fenêtres | En attente du client |
 | Octobre | Vérifier l'apparition des données « entreprise locale » (module SEOPress à activer, Knowledge Graph en « Organisation ») | À vérifier |
 | Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette). Une fois la page Wemmel créée, faire pointer la redirection `serrurier-wemmel` vers elle | À planifier |
 | Mois 2 et 3 | Reconstruire `/depannage-serrure/` dans Elementor à partir de son ancien texte, puis retirer la redirection | À planifier |
