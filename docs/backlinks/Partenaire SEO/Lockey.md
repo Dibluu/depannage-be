@@ -203,6 +203,19 @@ La page reprend l'adresse `/serrurier-wemmel/`, que Google connaissait déjà (a
 
 Vérifié sur le site en ligne : la page répond, elle est indexable, figure dans le plan du site et apparaît dans le pied de page de toutes les pages et dans la liste des communes de l'accueil. Les boutons d'appel, les photos et la carte sont en place. L'ancienne adresse `/serrurier-ixelles/` renvoie toujours vers l'accueil.
 
+### 13 octobre — Vrais avis Google affichés sur le site
+
+Widget Trustindex relié à la fiche « Serrurier Lockey » (4,9/5, 57 avis) par l'admin, puis placé par l'agence. Sauvegarde préalable des pages.
+
+| # | Intervention | Où |
+|---|---|---|
+| 27 | Carrousel de 12 témoignages saisis à la main (dont deux textes identiques sous deux noms différents) remplacé par les vrais avis Google, mis à jour automatiquement | Accueil, section « Ce que pensent nos clients de notre entreprise ! » |
+| 28 | Bloc « Ce que nos clients disent de nous sur Google » ajouté | Pages Portes blindées, Coffres-forts, Fenêtres et Wemmel, avant la partie prix |
+
+Pourquoi : des avis vérifiables, liés à la fiche Google, inspirent plus confiance que des témoignages saisis à la main, et ils se mettent à jour à chaque nouvel avis.
+
+Vérifié dans le code en ligne : le widget est présent sur les 5 pages, avec les avis de la fiche, et **aucune donnée structurée d'avis n'est ajoutée** (pas d'étoiles auto-déclarées, donc pas de risque de pénalité). Les avis s'affichent au premier défilement de la page, comme le reste des scripts du site.
+
 ---
 
 ## Reste à faire
@@ -215,7 +228,6 @@ Vérifié sur le site en ligne : la page répond, elle est indexable, figure dan
 | Octobre | Demander l'indexation des pages nouvelles ou modifiées dans la Search Console | Admin | À faire |
 | Octobre | Fiche Google : lien vers le site avec suivi, services reliés aux 3 pages, nouvelles photos, description, publications régulières | Admin de la fiche | À faire |
 | Octobre | Demander l'indexation de `/serrurier-wemmel/` dans la Search Console | Admin | À faire |
-| Octobre | Relier le widget Trustindex à la fiche Google et désactiver ses données structurées d'avis ; ensuite, placer le widget sur l'accueil, les pages de spécialité et la page Wemmel | Admin, puis agence | À faire |
 | Octobre | Lien « Nous avons une… » de l'accueil : remplacer l'ancienne recherche Google par le lien de la fiche | Agence | À faire |
 | Octobre | Corriger l'adresse de la fiche Yelp (Anderlecht → Wemmel) ou retirer le bouton Yelp | Client | À faire |
 | Octobre | Photos de coffres-forts et de fenêtres sécurisées (3 ou 4 de chaque) | Client | En attente |
