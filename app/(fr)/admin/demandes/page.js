@@ -113,8 +113,13 @@ function SetupBanner({ app }) {
         <button onClick={app.install} className="rounded-lg bg-[#1A1A2E] px-3 py-2 text-xs font-bold text-white">Installer l’app</button>
       )}
       {app.push === 'off' && (
-        <button onClick={app.enable} className="flex items-center gap-1.5 rounded-lg bg-[#FF6B35] px-3 py-2 text-xs font-bold text-white"><Bell size={14} /> Activer les notifications</button>
+        <div className="w-full rounded-2xl bg-[#FF6B35] p-4 text-white shadow-lg shadow-[#FF6B35]/25">
+          <div className="flex items-center gap-2 font-bold"><Bell size={18} /> Notifications désactivées sur cet appareil</div>
+          <p className="mt-1 text-sm text-white/90">Activez-les pour être prévenu à chaque nouvelle demande, même app fermée.</p>
+          <button onClick={app.enable} className="mt-3 w-full rounded-xl bg-white py-3 text-sm font-black text-[#FF6B35]">Activer les notifications</button>
+        </div>
       )}
+      {app.push === 'unsupported' && <span className="text-xs text-gray-500">Ce navigateur ne reçoit pas les notifications. Installez l’app sur l’écran d’accueil du téléphone.</span>}
       {app.push === 'on' && (
         <button onClick={app.disable} className="flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-500"><BellOff size={14} /> Couper les notifications</button>
       )}
