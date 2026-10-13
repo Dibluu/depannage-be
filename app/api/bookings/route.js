@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server'
 import { loadCatalog, FEES, surchargeFor } from '../../../lib/pricing'
-import { communeByPostcode } from '../../../lib/geo'
+import { communeByPostcode, communeName } from '../../../lib/geo'
+import { whatsappLink } from '../../../lib/bookings'
+import { pushToAdmins } from '../../../lib/push'
 
 // Booking intake. Prices are recomputed here from the catalogue — the client's numbers are never trusted.
 // Storage: Supabase `bookings` (service role key if set, otherwise anon key + insert policy).
-// Notification: Resend email to BOOKING_NOTIFY_EMAIL when RESEND_API_KEY is set.
+// Notification: Resend email to BOOKING_NOTIFY_EMAIL when RESEND_API_KEY is set, with a wa.me link that
+// opens WhatsApp on the customer's number with the recap pre-filled (sent by hand from the business account).
 
 const TRADES = ['Serrurerie', 'Plomberie', 'Électricité', 'Chauffage', 'Autre']
 const clean = (v, max = 300) => String(v ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max)
@@ -35,7 +38,9 @@ async function uploadPhoto(ref, dataUrl) {
   return res?.ok ? path : null
 }
 
-async function notify(b) {
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+
+async function notify(b, whatsapp) {
   const key = process.env.RESEND_API_KEY
   const to = process.env.BOOKING_NOTIFY_EMAIL
   if (!key || !to) return false
@@ -47,6 +52,8 @@ async function notify(b) {
     `${b.address}, ${b.postcode} ${b.commune}${b.floor ? ` (${b.floor})` : ''}`,
     b.description && `Précisions : ${b.description}`,
   ].filter(Boolean)
+  const html = `<p>${lines.map(esc).join('<br>')}</p>`
+    + `<p><a href="${esc(whatsapp)}" style="display:inline-block;background:#25D366;color:#fff;padding:12px 20px;border-radius:8px;font-weight:bold;text-decoration:none">Envoyer le récapitulatif sur WhatsApp</a></p>`
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
@@ -55,10 +62,20 @@ async function notify(b) {
       from: process.env.BOOKING_FROM_EMAIL || 'Dépannage.be <onboarding@resend.dev>',
       to: [to],
       subject: `${b.urgent ? '⚡ ' : ''}Nouvelle demande ${b.trade} — ${b.commune} (${b.ref})`,
-      text: lines.join('\n'),
+      text: `${lines.join('\n')}\n\nRécapitulatif WhatsApp : ${whatsapp}`,
+      html,
     }),
   }).catch(() => null)
   return !!res?.ok
+}
+
+function pushPayload(b) {
+  return {
+    title: `${b.urgent ? '⚡ URGENT · ' : ''}${b.trade} à ${b.commune}`,
+    body: [b.problem, b.price_min ? `${b.price_min}–${b.price_max} €` : 'sur devis', b.name].filter(Boolean).join(' · '),
+    url: `/admin/demandes?ref=${encodeURIComponent(b.ref)}`,
+    tag: b.ref,
+  }
 }
 
 export async function POST(request) {
@@ -114,6 +131,8 @@ export async function POST(request) {
     status: 'nouveau',
   }
 
+  const whatsapp = whatsappLink(booking, prestation ? prestation[booking.lang] : booking.problem, communeName(commune, booking.lang))
+
   const res = await supabaseFetch('/rest/v1/bookings', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' },
@@ -121,7 +140,10 @@ export async function POST(request) {
   })
   if (!res) {
     // No database configured: the email is then the only record — fail loudly if it can't be sent.
-    if (await notify(booking)) return NextResponse.json({ ref })
+    if (await notify(booking, whatsapp)) {
+      await pushToAdmins(pushPayload(booking))
+      return NextResponse.json({ ref })
+    }
     console.error('bookings: neither Supabase nor Resend configured', ref)
     return NextResponse.json({ error: 'not_configured' }, { status: 503 })
   }
@@ -138,7 +160,7 @@ export async function POST(request) {
       body: JSON.stringify({ photo_url: photoPath }),
     })
   }
-  await notify({ ...booking })
+  await Promise.all([notify(booking, whatsapp), pushToAdmins(pushPayload(booking))])
 
   return NextResponse.json({ ref })
 }

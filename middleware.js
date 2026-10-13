@@ -15,6 +15,11 @@ export async function middleware(request) {
     return NextResponse.rewrite(new URL('/home', request.url))
   }
 
+  // ── /admin opens the admin app's start page ──
+  if (pathname === '/admin' || pathname === '/admin/') {
+    return NextResponse.redirect(new URL('/admin/demandes', request.url))
+  }
+
   // ── Protect all /admin routes except /admin/login ──
   if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
     if (!(await isAdminRequest(request))) {
