@@ -183,18 +183,30 @@ Pourquoi : de vraies photos rassurent les clients (elles prouvent que l'entrepri
 
 Vérifié sur capture d'écran : photos et galerie affichées correctement. Sauvegarde préalable des pages.
 
+### 13 octobre — État de la fiche Google et de la visibilité sur Google Maps
+
+- Données « entreprise locale » : elles apparaissent maintenant dans le code du site (type « Serrurier », adresse de Wemmel, coordonnées, horaires 24h/24). Le Knowledge Graph est encore en « Personne ».
+- Fiche Google « Serrurier Lockey » : revendiquée, catégories « Serrurier » et « Service de serrurerie d'urgence », adresse de Wemmel identique au site, 24h/24, **4,9/5 sur 57 avis**, 39 photos. Lien vers le site en `www.` (redirigé correctement vers le site).
+- Google Maps ce jour : **2e sur « serrurier wemmel »**, absent du top 20 sur « serrurier bruxelles », « serrurier jette » et « porte blindée bruxelles ».
+- Le bouton « Nos avis Google » du haut de page mène bien à la fiche. Le bouton Yelp mène à une ancienne fiche « Lockey Anderlecht ».
+
 ---
 
 ## Reste à faire
 
-| Quand | Action | Statut |
-|---|---|---|
-| Octobre | Mettre à jour Elementor Pro (4.3.0 → 4.3.1) maintenant que la licence est renouvelée | À faire dans l'admin |
-| Octobre | Données structurées « entreprise locale » dans SEOPress PRO (serrurier, adresse de Wemmel, téléphone, 24h/24) et passer le Knowledge Graph de « Personne » à « Organisation » | À faire dans l'admin |
-| Octobre | Relancer une analyse Wordfence | À faire dans l'admin |
-| Octobre | Recevoir des photos de coffres-forts et de fenêtres sécurisées (3 ou 4 de chaque) pour les pages Coffres-forts et Fenêtres | En attente du client |
-| Octobre | Vérifier l'apparition des données « entreprise locale » (module SEOPress à activer, Knowledge Graph en « Organisation ») | À vérifier |
-| Mois 2 et 3 | Pages de commune réelles (Wemmel, Laeken, Jette). Une fois la page Wemmel créée, faire pointer la redirection `serrurier-wemmel` vers elle | À planifier |
-| Mois 2 et 3 | Reconstruire `/depannage-serrure/` dans Elementor à partir de son ancien texte, puis retirer la redirection | À planifier |
-| Mois 2 et 3 | Versions néerlandaise et anglaise | À planifier |
-| Mi-novembre | Nouvelle mesure DataForSEO et comparaison avec la situation de départ, y compris sur les nouvelles spécialités | À planifier |
+| Quand | Action | Qui | Statut |
+|---|---|---|---|
+| Octobre | Mettre à jour Elementor Pro (toujours en 4.3.0 malgré la licence renouvelée) | Admin | À faire |
+| Octobre | Knowledge Graph SEOPress : passer de « Personne » à « Organisation » | Admin | À faire |
+| Octobre | Relancer une analyse Wordfence | Admin | À faire |
+| Octobre | Demander l'indexation des pages nouvelles ou modifiées dans la Search Console | Admin | À faire |
+| Octobre | Fiche Google : lien vers le site avec suivi, services reliés aux 3 pages, nouvelles photos, description, publications régulières | Admin de la fiche | À faire |
+| Octobre | Afficher les vrais avis Google sur le site (widget gratuit, sans données structurées d'avis) | Agence | À valider |
+| Octobre | Lien « Nous avons une… » de l'accueil : remplacer l'ancienne recherche Google par le lien de la fiche | Agence | À faire |
+| Octobre | Corriger l'adresse de la fiche Yelp (Anderlecht → Wemmel) ou retirer le bouton Yelp | Client | À faire |
+| Octobre | Photos de coffres-forts et de fenêtres sécurisées (3 ou 4 de chaque) | Client | En attente |
+| Octobre–novembre | Demander un avis Google à chaque client satisfait (lien direct à envoyer par SMS) | Client | À mettre en place |
+| Mois 2 et 3 | Pages de commune réelles : Wemmel en premier, puis Jette, Laeken, Ganshoren. Faire pointer la redirection `serrurier-wemmel` vers la nouvelle page | Agence | À planifier |
+| Mois 2 et 3 | Inscriptions dans les annuaires belges avec nom, adresse et téléphone identiques | Agence | À planifier |
+| Mois 2 et 3 | Reconstruire `/depannage-serrure/`, versions néerlandaise et anglaise | Agence | À planifier |
+| Mi-novembre | Nouvelle mesure DataForSEO et Google Maps, comparaison avec la situation de départ | Agence | À planifier |
