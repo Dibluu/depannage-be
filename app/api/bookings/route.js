@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { loadCatalog, FEES, surchargeFor } from '../../../lib/pricing'
 import { communeByPostcode, communeName } from '../../../lib/geo'
+import { whatsappLink } from '../../../lib/bookings'
+import { pushToAdmins } from '../../../lib/push'
 
 // Booking intake. Prices are recomputed here from the catalogue — the client's numbers are never trusted.
 // Storage: Supabase `bookings` (service role key if set, otherwise anon key + insert policy).
@@ -36,45 +38,6 @@ async function uploadPhoto(ref, dataUrl) {
   return res?.ok ? path : null
 }
 
-const RECAP = {
-  fr: {
-    trades: { Serrurerie: 'Serrurerie', Plomberie: 'Plomberie', Électricité: 'Électricité', Chauffage: 'Chauffage', Autre: 'Intervention' },
-    slots: { matin: 'matin (8h–12h)', 'apres-midi': 'après-midi (12h–17h)', soir: 'soir (17h–20h)' },
-    urgent: 'dès que possible',
-    hello: (name, ref) => `Bonjour ${name}, ici Dépannage.be. Nous avons bien reçu votre demande ${ref} :`,
-    sep: ' : ', when: 'Quand', where: 'Adresse', price: 'Prix annoncé', quote: 'sur devis',
-    next: 'L’artisan vous appelle pour confirmer l’heure de passage.',
-  },
-  nl: {
-    trades: { Serrurerie: 'Slotenmaker', Plomberie: 'Loodgieter', Électricité: 'Elektricien', Chauffage: 'Verwarming', Autre: 'Interventie' },
-    slots: { matin: 'ochtend (8u–12u)', 'apres-midi': 'namiddag (12u–17u)', soir: 'avond (17u–20u)' },
-    urgent: 'zo snel mogelijk',
-    hello: (name, ref) => `Goedendag ${name}, hier Dépannage.be. We hebben uw aanvraag ${ref} goed ontvangen:`,
-    sep: ': ', when: 'Wanneer', where: 'Adres', price: 'Aangekondigde prijs', quote: 'op offerte',
-    next: 'De vakman belt u om het uur van zijn bezoek te bevestigen.',
-  },
-}
-
-// Belgian numbers as typed by customers (0470…, +32…, 0032…) → digits for wa.me.
-function waNumber(phone) {
-  const d = phone.replace(/\D/g, '').replace(/^00/, '')
-  return d.startsWith('0') ? `32${d.slice(1)}` : d
-}
-
-function whatsappLink(b, label, communeLabel) {
-  const r = RECAP[b.lang]
-  const day = b.urgent ? r.urgent : `${new Date(`${b.slot_date}T12:00:00`).toLocaleDateString(b.lang === 'nl' ? 'nl-BE' : 'fr-BE', { weekday: 'long', day: 'numeric', month: 'long' })}, ${r.slots[b.slot_time]}`
-  const text = [
-    r.hello(b.name.split(' ')[0], b.ref),
-    `• ${r.trades[b.trade]}${r.sep}${label}`,
-    `• ${r.when}${r.sep}${day}`,
-    `• ${r.where}${r.sep}${b.address}, ${b.postcode} ${communeLabel}`,
-    `• ${r.price}${r.sep}${b.price_min ? `${b.price_min} – ${b.price_max} €` : r.quote}`,
-    r.next,
-  ].join('\n')
-  return `https://wa.me/${waNumber(b.phone)}?text=${encodeURIComponent(text)}`
-}
-
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 
 async function notify(b, whatsapp) {
@@ -104,6 +67,15 @@ async function notify(b, whatsapp) {
     }),
   }).catch(() => null)
   return !!res?.ok
+}
+
+function pushPayload(b) {
+  return {
+    title: `${b.urgent ? '⚡ URGENT · ' : ''}${b.trade} à ${b.commune}`,
+    body: [b.problem, b.price_min ? `${b.price_min}–${b.price_max} €` : 'sur devis', b.name].filter(Boolean).join(' · '),
+    url: `/admin/demandes?ref=${encodeURIComponent(b.ref)}`,
+    tag: b.ref,
+  }
 }
 
 export async function POST(request) {
@@ -168,7 +140,10 @@ export async function POST(request) {
   })
   if (!res) {
     // No database configured: the email is then the only record — fail loudly if it can't be sent.
-    if (await notify(booking, whatsapp)) return NextResponse.json({ ref })
+    if (await notify(booking, whatsapp)) {
+      await pushToAdmins(pushPayload(booking))
+      return NextResponse.json({ ref })
+    }
     console.error('bookings: neither Supabase nor Resend configured', ref)
     return NextResponse.json({ error: 'not_configured' }, { status: 503 })
   }
@@ -185,7 +160,7 @@ export async function POST(request) {
       body: JSON.stringify({ photo_url: photoPath }),
     })
   }
-  await notify(booking, whatsapp)
+  await Promise.all([notify(booking, whatsapp), pushToAdmins(pushPayload(booking))])
 
   return NextResponse.json({ ref })
 }

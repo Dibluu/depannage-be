@@ -22,7 +22,7 @@ export default function AdminLogin() {
       })
       const data = await res.json()
       if (!res.ok) { setError(data.error || 'Erreur inconnue.'); setLoading(false); return }
-      router.push('/admin/pricing')
+      router.push('/admin/demandes')
     } catch {
       setError('Erreur réseau.')
       setLoading(false)

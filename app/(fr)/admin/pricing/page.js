@@ -388,6 +388,10 @@ export default function AdminPricingPage() {
 
             {/* Actions */}
             <div className="flex items-center gap-2">
+              <a href="/admin/demandes"
+                className="flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-gray-800 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
+                Demandes
+              </a>
               <a href="/" target="_blank" rel="noopener noreferrer"
                 className="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-gray-800 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
                 Voir le site <ExternalLink size={12} />
