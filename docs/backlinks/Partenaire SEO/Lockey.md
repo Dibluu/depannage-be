@@ -190,6 +190,19 @@ Vérifié sur capture d'écran : photos et galerie affichées correctement. Sauv
 - Google Maps ce jour : **2e sur « serrurier wemmel »**, absent du top 20 sur « serrurier bruxelles », « serrurier jette » et « porte blindée bruxelles ».
 - Le bouton « Nos avis Google » du haut de page mène bien à la fiche. Le bouton Yelp mène à une ancienne fiche « Lockey Anderlecht ».
 
+### 13 octobre — Page « Serrurier à Wemmel » et widget d'avis
+
+| # | Intervention | Détail |
+|---|---|---|
+| 23 | Page « Serrurier à Wemmel » publiée | `/serrurier-wemmel/`, la commune où Lockey est installé (2e sur Google Maps pour « serrurier wemmel », 170 recherches par mois). Contenu propre à Wemmel : adresse de l'entreprise, interventions avec liens vers les 3 pages de spécialité, prix, communes voisines (Jette, Laeken, Ganshoren, Asse, Meise), questions fréquentes. Mêmes boutons d'appel et de devis, photos d'intervention et carte Google de l'entreprise. Titre Google « Serrurier Wemmel 24h/24 : dépannage, porte blindée \| LocKey » |
+| 24 | Lien « Serrurier Wemmel » ajouté au menu du pied de page | Présent sur toutes les pages, à côté de « Serrurier Uccle » |
+| 25 | « Wemmel 1780 » de la liste des communes de l'accueil transformé en lien vers la page | Accueil, zone Brabant flamand |
+| 26 | Widget d'avis Google (Trustindex) installé par l'admin | Il reste à le relier à la fiche « Serrurier Lockey » avant de pouvoir l'afficher |
+
+La page reprend l'adresse `/serrurier-wemmel/`, que Google connaissait déjà (ancienne page supprimée). L'ancienne redirection SEOPress `serrurier-wemmel` → accueil a été supprimée le même jour.
+
+Vérifié sur le site en ligne : la page répond, elle est indexable, figure dans le plan du site et apparaît dans le pied de page de toutes les pages et dans la liste des communes de l'accueil. Les boutons d'appel, les photos et la carte sont en place. L'ancienne adresse `/serrurier-ixelles/` renvoie toujours vers l'accueil.
+
 ---
 
 ## Reste à faire
@@ -201,12 +214,13 @@ Vérifié sur capture d'écran : photos et galerie affichées correctement. Sauv
 | Octobre | Relancer une analyse Wordfence | Admin | À faire |
 | Octobre | Demander l'indexation des pages nouvelles ou modifiées dans la Search Console | Admin | À faire |
 | Octobre | Fiche Google : lien vers le site avec suivi, services reliés aux 3 pages, nouvelles photos, description, publications régulières | Admin de la fiche | À faire |
-| Octobre | Afficher les vrais avis Google sur le site (widget gratuit, sans données structurées d'avis) | Agence | À valider |
+| Octobre | Demander l'indexation de `/serrurier-wemmel/` dans la Search Console | Admin | À faire |
+| Octobre | Relier le widget Trustindex à la fiche Google et désactiver ses données structurées d'avis ; ensuite, placer le widget sur l'accueil, les pages de spécialité et la page Wemmel | Admin, puis agence | À faire |
 | Octobre | Lien « Nous avons une… » de l'accueil : remplacer l'ancienne recherche Google par le lien de la fiche | Agence | À faire |
 | Octobre | Corriger l'adresse de la fiche Yelp (Anderlecht → Wemmel) ou retirer le bouton Yelp | Client | À faire |
 | Octobre | Photos de coffres-forts et de fenêtres sécurisées (3 ou 4 de chaque) | Client | En attente |
 | Octobre–novembre | Demander un avis Google à chaque client satisfait (lien direct à envoyer par SMS) | Client | À mettre en place |
-| Mois 2 et 3 | Pages de commune réelles : Wemmel en premier, puis Jette, Laeken, Ganshoren. Faire pointer la redirection `serrurier-wemmel` vers la nouvelle page | Agence | À planifier |
+| Mois 2 et 3 | Pages de commune suivantes : Jette, Laeken, Ganshoren | Agence | À planifier |
 | Mois 2 et 3 | Inscriptions dans les annuaires belges avec nom, adresse et téléphone identiques | Agence | À planifier |
 | Mois 2 et 3 | Reconstruire `/depannage-serrure/`, versions néerlandaise et anglaise | Agence | À planifier |
 | Mi-novembre | Nouvelle mesure DataForSEO et Google Maps, comparaison avec la situation de départ | Agence | À planifier |
