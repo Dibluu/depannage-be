@@ -223,6 +223,7 @@ Vérifié dans le code en ligne : le widget est présent sur les 5 pages, avec l
 | 29 | Le lien « excellente réputation » menait à une recherche Google de 2018. Il mène maintenant à la fiche Google « Serrurier Lockey » | Accueil |
 | 30 | Les 3 cartes Google du site cherchaient « lockey » ou « serrurier lockey ». Elles affichent maintenant l'adresse exacte de l'entreprise à Wemmel | Accueil, Contact, Uccle |
 | 31 | Liens vers les 3 pages de spécialité ajoutés | Page Uccle |
+| 32 | « nos services d'installation de portes » remplacé par « nos services de blindage de portes » (Lockey ne pose pas de portes neuves) | Accueil |
 
 Mesures du jour :
 - **Vitesse mobile** (test Lighthouse) : accueil 59/100 (affichage du contenu principal en 5,3 s), page Portes blindées 70/100 (4,9 s). Principales causes : temps de réponse du serveur (1,5 à 2,2 s) et un rechargement de page déclenché par le « mode invité » de LiteSpeed (jusqu'à 4,5 à 5,5 s perdues selon le test). Aucun décalage de mise en page.
@@ -253,7 +254,6 @@ Classé par effet attendu sur les appels. Les positions sur Google Maps viennent
 | Pages de commune de la périphérie nord, proches de Wemmel (là où la fiche Google peut se placer) : Vilvoorde, Asse, Grimbergen, Meise. Jette et Laeken restent à Smithlock pour ne pas faire concurrence au même propriétaire | Agence | Une toutes les deux semaines | À valider |
 | Version néerlandaise des pages clés (accueil, 3 spécialités, Wemmel) : Wemmel est en Flandre et les recherches en néerlandais sont nombreuses (slotenmaker brussel 390, slotenmaker vilvoorde 260) | Agence | Novembre | À valider |
 | Photos de coffres-forts et de fenêtres pour leurs pages | Client | Dès que possible | En attente |
-| Corriger « installation de portes » sur l'accueil (Lockey ne pose pas de portes neuves) | Agence | Octobre | À faire |
 
 ### 3. Technique
 
