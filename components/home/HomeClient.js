@@ -1,29 +1,12 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
+import { FAQS } from './faqs'
 import { PHONE, PHONE_HREF, LEGAL } from '../../lib/site'
 
-const TRADES = ['Plombier', 'Électricien', 'Serrurier', 'Chauffagiste', 'Menuisier']
+const TRADES = ['Serrurier', 'Plombier', 'Électricien', 'Chauffagiste']
 
 
-const FAQS = [
-  {
-    q: 'Comment le prix est-il calculé ?',
-    a: 'Notre tarif est basé sur le type d\'intervention et la durée estimée. Il vous est communiqué avant toute confirmation — vous n\'avez aucune mauvaise surprise à l\'arrivée de l\'artisan.',
-  },
-  {
-    q: 'Que se passe-t-il si le problème est plus complexe ?',
-    a: 'L\'artisan vous prévient sur place avant d\'aller plus loin. Vous restez décisionnaire à chaque étape. Pas de travaux supplémentaires sans votre accord explicite.',
-  },
-  {
-    q: 'Quelles zones couvrez-vous ?',
-    a: 'Dépannage.be intervient dans les 19 communes de Bruxelles, dans tout le Brabant wallon et dans tout le Brabant flamand. Indiquez votre code postal lors de la réservation : nous vous confirmons tout de suite si un artisan partenaire couvre votre adresse.',
-  },
-  {
-    q: 'Puis-je annuler ma réservation ?',
-    a: 'Oui, gratuitement jusqu\'à 2h avant l\'intervention. Au-delà, des frais d\'annulation peuvent s\'appliquer pour couvrir le déplacement de l\'artisan.',
-  },
-]
 
 /* ── Inline SVG helpers ── */
 function CheckSVG() {
@@ -55,7 +38,7 @@ function ChevronDownSVG() {
   )
 }
 
-export default function HomeClient({ zonesSection }) {
+export default function HomeClient({ tradesSection, zonesSection }) {
   const [activeWord, setActiveWord] = useState(0)
   const [exitWord, setExitWord]   = useState(-1)
   const [openFaq, setOpenFaq]     = useState(-1)
@@ -105,9 +88,9 @@ export default function HomeClient({ zonesSection }) {
         </nav>
 
         <div className="hero-body container">
-          <h1 className="hero-headline">
+          <div className="hero-headline" aria-hidden="true">
             <span className="hero-headline-static">Votre</span>
-            <span className="hero-trade-wrap" aria-live="polite">
+            <span className="hero-trade-wrap">
               {TRADES.map((t, i) => (
                 <span
                   key={t}
@@ -118,10 +101,10 @@ export default function HomeClient({ zonesSection }) {
               ))}
             </span>
             <span className="hero-headline-static">chez vous aujourd&apos;hui.</span>
+          </div>
+          <h1 className="hero-sub">
+            Serrurier, plombier, électricien et chauffagiste à Bruxelles et dans le Brabant. Prix annoncé avant l&apos;intervention, sans surprise.
           </h1>
-          <p className="hero-sub">
-            Prix fixe annoncé avant l&apos;intervention.<br />Sans surprise.
-          </p>
           <div className="hero-cta-wrap">
             <Link href="/booking" className="btn btn-primary">
               Obtenir mon prix gratuit <ArrowRightSVG />
@@ -172,15 +155,15 @@ export default function HomeClient({ zonesSection }) {
                 </svg>
               </div>
               <div className="step-label">Étape 01</div>
-              <div className="step-title">Décris ton problème</div>
-              <div className="step-body">Sélectionne ton type d&apos;intervention en 30 secondes.</div>
+              <div className="step-title">Décrivez votre problème</div>
+              <div className="step-body">Choisissez votre intervention en 30 secondes.</div>
             </div>
             <div className="step-card">
               <span className="step-number">02</span>
               <div className="step-icon"><div className="step-icon-euro">€</div></div>
               <div className="step-label">Étape 02</div>
-              <div className="step-title">Ton prix s&apos;affiche</div>
-              <div className="step-body">Prix fixe garanti. Tu sais exactement ce que tu paieras.</div>
+              <div className="step-title">Votre prix s&apos;affiche</div>
+              <div className="step-body">La fourchette de prix est annoncée avant le déplacement. Vous savez ce que vous paierez.</div>
             </div>
             <div className="step-card">
               <span className="step-number">03</span>
@@ -199,41 +182,15 @@ export default function HomeClient({ zonesSection }) {
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <section id="services" className="section">
-        <div className="container">
-          <h2 className="section-title">Nos interventions</h2>
-          <p className="section-sub">Tarifs fixes, annoncés à l&apos;avance.</p>
-          <div className="services-grid">
-            {[
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>, name:"Fuite d'eau", price:"Dès 120€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>, name:"Débouchage", price:"Dès 130€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>, name:"Chauffe-eau", price:"Dès 450€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, name:"Panne électrique", price:"Dès 110€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="5" y="9" width="14" height="6" rx="1"/></svg>, name:"Tableau électrique", price:"Dès 450€" },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, name:"Serrurerie", price:"Dès 110€" },
-            ].map((s, i) => (
-              <Link key={i} href="/booking" className="service-card">
-                <div className="service-icon">{s.icon}</div>
-                <div className="service-name">{s.name}</div>
-                <div className="service-price"><CheckGreenSVG /> {s.price}</div>
-                <div className="service-link">Voir le détail <ArrowRightSVG size={14} /></div>
-              </Link>
-            ))}
-          </div>
-          <Link href="/booking" className="btn btn-primary" style={{ maxWidth: 400, margin: '0 auto', display: 'flex' }}>
-            Tous nos tarifs sont fixes <ArrowRightSVG />
-          </Link>
-        </div>
-      </section>
+      {tradesSection}
 
       {/* ── TRUST ── */}
       <section id="trust" className="section">
         <div className="container">
           <div className="trust-blocks">
             {[
-              { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title:'Artisans certifiés', body:'Chaque artisan est vérifié, assuré et évalué par nos clients.' },
-              { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>, title:'Prix garanti', body:'Le prix affiché est le prix payé. Zéro surprise, zéro négociation.' },
+              { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title:'Artisans vérifiés', body:'Chaque artisan est indépendant, inscrit à la BCE et assuré en responsabilité civile.' },
+              { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>, title:'Prix annoncé', body:'La fourchette annoncée est respectée. Un travail en plus ? Devis sur place, que vous pouvez refuser.' },
               { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, title:'Intervention rapide', body:'Disponible le jour même en urgence. Parce que ça ne peut pas attendre.' },
             ].map((b, i) => (
               <div key={i} className="trust-block">
