@@ -216,23 +216,65 @@ Pourquoi : des avis vérifiables, liés à la fiche Google, inspirent plus confi
 
 Vérifié dans le code en ligne : le widget est présent sur les 5 pages, avec les avis de la fiche, et **aucune donnée structurée d'avis n'est ajoutée** (pas d'étoiles auto-déclarées, donc pas de risque de pénalité). Les avis s'affichent au premier défilement de la page, comme le reste des scripts du site.
 
+### 14 octobre — Corrections rapides et état des lieux pour la suite
+
+| # | Intervention | Où |
+|---|---|---|
+| 29 | Le lien « excellente réputation » menait à une recherche Google de 2018. Il mène maintenant à la fiche Google « Serrurier Lockey » | Accueil |
+| 30 | Les 3 cartes Google du site cherchaient « lockey » ou « serrurier lockey ». Elles affichent maintenant l'adresse exacte de l'entreprise à Wemmel | Accueil, Contact, Uccle |
+| 31 | Liens vers les 3 pages de spécialité ajoutés | Page Uccle |
+
+Mesures du jour :
+- **Vitesse mobile** (test Lighthouse) : accueil 59/100 (affichage du contenu principal en 5,3 s), page Portes blindées 70/100 (4,9 s). Principales causes : temps de réponse du serveur (1,5 à 2,2 s) et un rechargement de page déclenché par le « mode invité » de LiteSpeed (jusqu'à 4,5 à 5,5 s perdues selon le test). Aucun décalage de mise en page.
+- **Volumes de recherche autour de Wemmel**, en français et en néerlandais (recherches par mois) : slotenmaker vilvoorde 260, slotenmaker asse 110, serrurier/slotenmaker grimbergen 70/90, serrurier/slotenmaker meise 70/50, slotenmaker wemmel 70, slotenmaker brussel 390, slotenmaker 24/7 390. Côté Bruxelles : serrurier jette 480, serrurier laeken 260, serrurier ganshoren 110.
+- **Smithlock** (même propriétaire) a déjà des pages Jette et Laeken bien placées (8e et 6e).
+- Dépannage.be renvoie bien vers Lockey depuis sa page partenaires.
+- Lien direct pour laisser un avis sur la fiche : `https://search.google.com/local/writereview?placeid=ChIJZZRckO7Bw0cR-QScIPn4tKs`
+
 ---
 
-## Reste à faire
+## Plan d'action (octobre à décembre 2026)
 
-| Quand | Action | Qui | Statut |
+Classé par effet attendu sur les appels. Les positions sur Google Maps viennent d'abord de la fiche Google et des avis, ensuite du site.
+
+### 1. Fiche Google et avis (effet le plus fort sur Google Maps)
+
+| Action | Qui | Rythme | Statut |
 |---|---|---|---|
-| Octobre | Mettre à jour Elementor Pro (toujours en 4.3.0 malgré la licence renouvelée) | Admin | À faire |
-| Octobre | Knowledge Graph SEOPress : passer de « Personne » à « Organisation » | Admin | À faire |
-| Octobre | Relancer une analyse Wordfence | Admin | À faire |
-| Octobre | Demander l'indexation des pages nouvelles ou modifiées dans la Search Console | Admin | À faire |
-| Octobre | Fiche Google : lien vers le site avec suivi, services reliés aux 3 pages, nouvelles photos, description, publications régulières | Admin de la fiche | À faire |
-| Octobre | Demander l'indexation de `/serrurier-wemmel/` dans la Search Console | Admin | À faire |
-| Octobre | Lien « Nous avons une… » de l'accueil : remplacer l'ancienne recherche Google par le lien de la fiche | Agence | À faire |
-| Octobre | Corriger l'adresse de la fiche Yelp (Anderlecht → Wemmel) ou retirer le bouton Yelp | Client | À faire |
-| Octobre | Photos de coffres-forts et de fenêtres sécurisées (3 ou 4 de chaque) | Client | En attente |
-| Octobre–novembre | Demander un avis Google à chaque client satisfait (lien direct à envoyer par SMS) | Client | À mettre en place |
-| Mois 2 et 3 | Pages de commune suivantes : Jette, Laeken, Ganshoren | Agence | À planifier |
-| Mois 2 et 3 | Inscriptions dans les annuaires belges avec nom, adresse et téléphone identiques | Agence | À planifier |
-| Mois 2 et 3 | Reconstruire `/depannage-serrure/`, versions néerlandaise et anglaise | Agence | À planifier |
-| Mi-novembre | Nouvelle mesure DataForSEO et Google Maps, comparaison avec la situation de départ | Agence | À planifier |
+| Demander un avis à chaque client satisfait, par SMS avec le lien direct | Client | Après chaque intervention, objectif 4 à 5 avis par mois | À lancer |
+| Répondre à chaque avis, positif ou négatif, en citant le service rendu (« ouverture de porte blindée à Wemmel… ») | Client ou admin | Sous 48 h | À lancer |
+| Publication sur la fiche : une intervention avec photo et un lien vers la page concernée | Admin | Chaque semaine | À lancer |
+| Fiche : services (porte blindée, coffre-fort, fenêtres) avec description, lien du site avec suivi, nouvelles photos | Admin | Une fois | À faire |
+
+### 2. Site : pages et contenu
+
+| Action | Qui | Quand | Statut |
+|---|---|---|---|
+| Pages de commune de la périphérie nord, proches de Wemmel (là où la fiche Google peut se placer) : Vilvoorde, Asse, Grimbergen, Meise. Jette et Laeken restent à Smithlock pour ne pas faire concurrence au même propriétaire | Agence | Une toutes les deux semaines | À valider |
+| Version néerlandaise des pages clés (accueil, 3 spécialités, Wemmel) : Wemmel est en Flandre et les recherches en néerlandais sont nombreuses (slotenmaker brussel 390, slotenmaker vilvoorde 260) | Agence | Novembre | À valider |
+| Photos de coffres-forts et de fenêtres pour leurs pages | Client | Dès que possible | En attente |
+| Corriger « installation de portes » sur l'accueil (Lockey ne pose pas de portes neuves) | Agence | Octobre | À faire |
+
+### 3. Technique
+
+| Action | Qui | Quand | Statut |
+|---|---|---|---|
+| Tester la désactivation du « mode invité » de LiteSpeed (LiteSpeed Cache → Général), puis remesurer la vitesse | Admin + agence | Octobre | À faire |
+| Mettre à jour Elementor Pro (toujours en 4.3.0) | Admin | Octobre | À faire |
+| Knowledge Graph SEOPress : « Personne » → « Organisation » | Admin | Octobre | À faire |
+| Relancer une analyse Wordfence | Admin | Octobre | À faire |
+| Demander l'indexation de `/serrurier-wemmel/` et des pages modifiées | Admin | Octobre | À faire |
+
+### 4. Présence en dehors du site
+
+| Action | Qui | Quand | Statut |
+|---|---|---|---|
+| Fiche Yelp : adresse d'Anderlecht → Wemmel (ou retirer le bouton Yelp du site) | Client | Octobre | À faire |
+| Inscriptions dans les annuaires belges (Pages d'Or, Cylex, Infobel, Hotfrog, page Facebook) avec exactement le même nom, la même adresse et le même téléphone : Serrurerie LocKey, Avenue de Limburg Stirum 115, 1780 Wemmel, +32 477 50 44 48 | Agence | Novembre | À planifier |
+
+### 5. Mesure
+
+| Action | Quand |
+|---|---|
+| Nouvelle mesure DataForSEO (positions, mots-clés, domaines référents) et positions Google Maps sur « serrurier wemmel », « serrurier bruxelles », « porte blindée bruxelles », « coffre fort bruxelles » | Mi-novembre |
+| Rapport client de fin de mois à partir de ce journal | Fin octobre |
