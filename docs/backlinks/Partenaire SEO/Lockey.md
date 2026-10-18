@@ -247,6 +247,39 @@ Demande du propriétaire : il ne veut plus être contacté pour des urgences de 
 
 Vérifié sur le site en ligne : aucune page ne renvoie plus vers la page voiture, et plus aucun texte visible ne propose de service automobile. Seule reste la mention des « véhicules de service » de l'entreprise.
 
+### 18 octobre — Nouvel audit SEO complet (DataForSEO)
+
+Coût des données : ≈ 0,40 $. Sources : positions en direct sur Google et Google Maps (Belgique), DataForSEO Labs (FR et NL), liens entrants, exploration technique du site (10 pages), tests de vitesse mobile (Lighthouse).
+
+**Ce qui progresse depuis le 2 octobre**
+
+| Indicateur | 2 octobre | 18 octobre |
+|---|---|---|
+| « serrurier bruxelles » (2 900/mois), Google | 14e | **7e** |
+| « serrurerie bruxelles » (170/mois), Google | 9e | **8e** |
+| « serrurier » (5 400/mois), Google | 15e | 11e |
+| « slotenmaker wemmel », Google Maps | – | **1er** |
+| « serrurier wemmel », Google Maps | 2e | 2e (Google : 13e) |
+| « serrurier meise », Google Maps | – | **2e** |
+| Avis Google | 57 (4,9/5) | **62 (4,9/5)** |
+| Score technique de l'exploration | 83/100 | **97/100** |
+
+**Ce qui bloque encore**
+- **Aucune des 4 nouvelles pages n'est encore indexée par Google** (Portes blindées, Coffres-forts, Fenêtres, Wemmel). Google a 7 pages du site en mémoire, dont l'ancienne page voiture.
+- Aucune position sur les nouvelles spécialités (porte blindée, coffre-fort, fenêtres) ni sur Uccle, Jette ou les recherches d'urgence.
+- **Vitesse mobile** : premier affichage nettement plus rapide depuis la désactivation du mode invité de LiteSpeed (2,4 à 2,6 s contre 4,3 à 4,8 s), mais le contenu principal reste lent sur l'accueil (9,1 s, 64/100) et la page Wemmel (10,5 s, 60/100). Page Portes blindées : 79/100, 4,1 s.
+- **Liens entrants** : 59 domaines, dont 42 de spam automatique. Les vrais liens sont rares (Kiverrou, ProvenExpert, Dépannage.be).
+- **Google Maps à Bruxelles** : les concurrents en tête ont 70 à 550 avis (Mikael 503, MRJ 553, KSB 73). À Wemmel, Serrurier Madani est 1er avec 83 avis (4,7/5).
+
+**Corrigé pendant l'audit**
+
+| # | Intervention | Où |
+|---|---|---|
+| 39 | Image « Zone d'intervention » cassée (fichier supprimé de la médiathèque) retirée | Accueil |
+| 40 | Lien mort vers l'ancien mini-site Google Sites (fermé par Google) remplacé par le lien de la fiche Google | Accueil |
+
+Reste sans gravité : balise « generator » en double (ajoutée par WordPress et Elementor), quelques contrastes de couleur faibles.
+
 ---
 
 ## Plan d'action (octobre à décembre 2026)
