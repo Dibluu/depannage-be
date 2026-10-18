@@ -324,7 +324,7 @@ Classé par effet attendu sur les appels. Les positions sur Google Maps viennent
 |---|---|---|---|
 | Demander un avis à chaque client satisfait, par SMS avec le lien direct | Client | Après chaque intervention, objectif 4 à 5 avis par mois | À lancer |
 | Répondre à chaque avis, positif ou négatif, en citant le service rendu (« ouverture de porte blindée à Wemmel… ») | Client ou admin | Sous 48 h | À lancer |
-| Publication sur la fiche : une intervention avec photo et un lien vers la page concernée | Admin | Chaque semaine | À lancer |
+| Publication sur la fiche : une intervention avec photo et un lien vers la page concernée | Admin | Chaque semaine | En cours (3 posts programmés le 18 octobre) |
 | Fiche : services (porte blindée, coffre-fort, fenêtres) avec description, lien du site avec suivi, nouvelles photos | Admin | Une fois | À faire |
 
 ### 2. Site : pages et contenu
@@ -341,10 +341,10 @@ Classé par effet attendu sur les appels. Les positions sur Google Maps viennent
 |---|---|---|---|
 | Imagify : générer le WebP pour toutes les tailles d'image, puis lancer l'optimisation groupée | Admin | Octobre | À faire |
 | Mettre à jour Elementor Pro (toujours en 4.3.0) | Admin | Octobre | À faire |
-| Knowledge Graph SEOPress : « Personne » → « Organisation » | Admin | Octobre | À faire |
+| Knowledge Graph SEOPress : « Personne » → « Organisation » | Admin | Octobre | Fait (vérifié le 18 octobre) |
 | Relancer une analyse Wordfence | Admin | Octobre | À faire |
 | Demander l'indexation de `/serrurier-wemmel/` et des pages modifiées | Admin | Octobre | À faire |
-| Faire disparaître `/serrurier-voiture/` de Google : redirection « 410 » dans SEOPress, et suppression temporaire dans la Search Console | Admin | Octobre | À faire |
+| Faire disparaître `/serrurier-voiture/` de Google : redirection « 410 » (faite, vérifiée le 18 octobre) et suppression temporaire dans la Search Console | Admin | Octobre | En cours |
 
 ### 4. Présence en dehors du site
 
