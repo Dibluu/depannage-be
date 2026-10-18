@@ -232,6 +232,21 @@ Mesures du jour :
 - Dépannage.be renvoie bien vers Lockey depuis sa page partenaires.
 - Lien direct pour laisser un avis sur la fiche : `https://search.google.com/local/writereview?placeid=ChIJZZRckO7Bw0cR-QScIPn4tKs`
 
+### 18 octobre — Fin des services automobiles
+
+Demande du propriétaire : il ne veut plus être contacté pour des urgences de voiture. Sauvegarde préalable de toutes les pages.
+
+| # | Intervention | Où |
+|---|---|---|
+| 33 | Page `/serrurier-voiture/` dépubliée (passée en brouillon, donc réversible). Elle renvoie une erreur 404 et a disparu du plan du site | Site |
+| 34 | Tous les liens vers la page voiture retirés : phrase « Clés de voiture perdues ? » de l'accueil, lien « les grandes marques de voitures », bouton « Automobile » de la page Tarifs (remplacé par « Portes blindées ») | Accueil, Tarifs |
+| 35 | Grille « Services automobile » retirée de la page Tarifs | Tarifs |
+| 36 | Pavé « automobile » remplacé par « fenêtres » (avec une image de serrure) dans la grille de services | 7 pages : accueil, Tarifs, Uccle, Portes blindées, Coffres-forts, Fenêtres, Wemmel |
+| 37 | Mentions de voiture retirées des textes (clés de voiture, ouverture de portière, verrouillage automobile, « propriétaires de voitures »…) | Accueil, Uccle |
+| 38 | Formulaire de contact : choix « AUTOMOBILE » retiré, « DOUBLE DE CLÉ (porte, voiture) » devient « DOUBLE DE CLÉ », choix « SÉCURITÉ DES FENÊTRES » ajouté | Contact |
+
+Vérifié sur le site en ligne : aucune page ne renvoie plus vers la page voiture, et plus aucun texte visible ne propose de service automobile. Seule reste la mention des « véhicules de service » de l'entreprise.
+
 ---
 
 ## Plan d'action (octobre à décembre 2026)
@@ -264,12 +279,14 @@ Classé par effet attendu sur les appels. Les positions sur Google Maps viennent
 | Knowledge Graph SEOPress : « Personne » → « Organisation » | Admin | Octobre | À faire |
 | Relancer une analyse Wordfence | Admin | Octobre | À faire |
 | Demander l'indexation de `/serrurier-wemmel/` et des pages modifiées | Admin | Octobre | À faire |
+| Faire disparaître `/serrurier-voiture/` de Google : redirection « 410 » dans SEOPress, et suppression temporaire dans la Search Console | Admin | Octobre | À faire |
 
 ### 4. Présence en dehors du site
 
 | Action | Qui | Quand | Statut |
 |---|---|---|---|
 | Fiche Yelp : adresse d'Anderlecht → Wemmel (ou retirer le bouton Yelp du site) | Client | Octobre | À faire |
+| Retirer les services et mentions automobiles de la fiche Google et des autres annuaires | Admin de la fiche | Octobre | À faire |
 | Inscriptions dans les annuaires belges (Pages d'Or, Cylex, Infobel, Hotfrog, page Facebook) avec exactement le même nom, la même adresse et le même téléphone : Serrurerie LocKey, Avenue de Limburg Stirum 115, 1780 Wemmel, +32 477 50 44 48 | Agence | Novembre | À planifier |
 
 ### 5. Mesure
