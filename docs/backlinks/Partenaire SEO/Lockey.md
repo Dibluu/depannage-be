@@ -280,6 +280,38 @@ Coût des données : ≈ 0,40 $. Sources : positions en direct sur Google et Goo
 
 Reste sans gravité : balise « generator » en double (ajoutée par WordPress et Elementor), quelques contrastes de couleur faibles.
 
+### 18 octobre — Vitesse : image du haut chargée en priorité, page Meise
+
+| # | Intervention | Détail |
+|---|---|---|
+| 41 | Image de fond du bandeau du haut préchargée en priorité | Diagnostic Lighthouse : l'élément le plus lent était l'image de fond du bandeau du haut, déclarée dans le CSS donc découverte tard (5 à 6 s d'attente). Deux blocs de code Astra (« Préchargement image du haut ») demandent au navigateur de charger sa version WebP dès le début : un pour l'accueil, un pour les pages de service, Uccle, Wemmel et Meise |
+| 42 | Page « Serrurier à Meise » publiée | `/serrurier-meise/` : commune voisine de Wemmel où Lockey est déjà 2e sur Google Maps. Contenu propre à Meise et Wolvertem (1860–1861), interventions, prix, communes voisines, questions fréquentes, boutons d'appel, photos, avis Google, carte. Titre Google « Serrurier Meise 24h/24 : dépannage, porte blindée \| LocKey » |
+| 43 | Liens vers la page Meise | Pied de page de toutes les pages, page Wemmel (« Autour de Wemmel »), liste des communes de l'accueil (« Meise 1860 ») |
+
+Vitesse mobile mesurée après correction (Lighthouse) :
+
+| Page | Avant | Après |
+|---|---|---|
+| Accueil | 62/100, contenu principal à 10,5 s | **76/100, 4,1 s** |
+| Wemmel | 60/100, 10,5 s | **82/100, 3,7 s** |
+| Portes blindées | 79/100, 4,1 s | **82/100, 3,7 s** |
+
+Constat Imagify : les versions WebP existent pour les images en grand format, pas pour les tailles réduites affichées dans les pages. Réglage à faire dans l'admin.
+
+### Bilan des actions au 18 octobre, par catégorie
+
+| Catégorie | Nombre d'actions | Exemples |
+|---|---|---|
+| Indexation et erreurs techniques | 12 | Page Contact rendue visible à Google, liens cassés et liens morts corrigés, 5 redirections, plans du site nettoyés |
+| Nouvelles pages et contenu | 14 | 5 pages créées (Portes blindées, Coffres-forts, Fenêtres, Wemmel, Meise), accueil réorienté, adresse de Wemmel partout, fin des services automobiles |
+| Titres et descriptions dans Google | 3 | Accueil et page Contact (les nouvelles pages ont leur titre dès la création) |
+| Design et contact | 10 | Menu, boutons d'appel et de devis, 10 vraies photos, galerie, avis Google affichés |
+| Google local (fiche et carte) | 3 | Données « entreprise locale », cartes sur l'adresse exacte, liens vers la fiche |
+| Sécurité | 4 | Wordfence, analyse complète, comptes vérifiés, mises à jour |
+| Vitesse | 2 | Mode invité de LiteSpeed désactivé, image du haut préchargée |
+| Liens et partenariat | 3 | Badge et deux liens Dépannage.be |
+| **Total** | **51** | |
+
 ---
 
 ## Plan d'action (octobre à décembre 2026)
@@ -299,7 +331,7 @@ Classé par effet attendu sur les appels. Les positions sur Google Maps viennent
 
 | Action | Qui | Quand | Statut |
 |---|---|---|---|
-| Pages de commune de la périphérie nord, proches de Wemmel (là où la fiche Google peut se placer) : Vilvoorde, Asse, Grimbergen, Meise. Jette et Laeken restent à Smithlock pour ne pas faire concurrence au même propriétaire | Agence | Une toutes les deux semaines | À valider |
+| Pages de commune de la périphérie nord : Meise faite le 18 octobre ; ensuite Asse, Grimbergen, Vilvoorde. Jette et Laeken restent à Smithlock | Agence | Une toutes les deux semaines | En cours |
 | Version néerlandaise des pages clés (accueil, 3 spécialités, Wemmel) : Wemmel est en Flandre et les recherches en néerlandais sont nombreuses (slotenmaker brussel 390, slotenmaker vilvoorde 260) | Agence | Novembre | À valider |
 | Photos de coffres-forts et de fenêtres pour leurs pages | Client | Dès que possible | En attente |
 
@@ -307,7 +339,7 @@ Classé par effet attendu sur les appels. Les positions sur Google Maps viennent
 
 | Action | Qui | Quand | Statut |
 |---|---|---|---|
-| Tester la désactivation du « mode invité » de LiteSpeed (LiteSpeed Cache → Général), puis remesurer la vitesse | Admin + agence | Octobre | À faire |
+| Imagify : générer le WebP pour toutes les tailles d'image, puis lancer l'optimisation groupée | Admin | Octobre | À faire |
 | Mettre à jour Elementor Pro (toujours en 4.3.0) | Admin | Octobre | À faire |
 | Knowledge Graph SEOPress : « Personne » → « Organisation » | Admin | Octobre | À faire |
 | Relancer une analyse Wordfence | Admin | Octobre | À faire |
