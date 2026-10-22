@@ -1,0 +1,66 @@
+# .github/workflows/cerveau.yml
+# Envoie chaque commit poussé et chaque déploiement au cerveau (Supabase).
+# Capte aussi ce qui ne passe pas par Claude Code : commits manuels,
+# déploiements Vercel / Netlify / GitHub Pages via les statuts GitHub.
+#
+# Secrets du repo à créer (Settings > Secrets and variables > Actions) :
+#   CERVEAU_URL           https://xxx.supabase.co
+#   CERVEAU_ANON_KEY      clé anon du projet cerveau (pas la service_role)
+#   CERVEAU_INGEST_TOKEN  jeton créé dans 002_repo_events.sql
+
+name: cerveau
+
+on:
+  push:
+  deployment_status:
+
+permissions:
+  contents: read
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Envoyer au cerveau
+        env:
+          URL: ${{ secrets.CERVEAU_URL }}
+          KEY: ${{ secrets.CERVEAU_ANON_KEY }}
+          TOKEN: ${{ secrets.CERVEAU_INGEST_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [ -z "$URL" ] && { echo "Secrets cerveau absents, on passe."; exit 0; }
+
+          send() {
+            curl -sS --fail-with-body -X POST "$URL/rest/v1/rpc/ingest_repo_event" \
+              -H "apikey: $KEY" -H "Authorization: Bearer $KEY" \
+              -H "Content-Type: application/json" -d "$1" > /dev/null
+          }
+
+          if [ "$EVENT_NAME" = "push" ]; then
+            BRANCH="${GITHUB_REF#refs/heads/}"
+            jq -c --arg t "$TOKEN" --arg r "$REPO" --arg b "$BRANCH" '
+              .commits[]
+              | select(.message | test("\\[cerveau\\]") | not)
+              | {p_token:$t, p_repo:$r, p_event_type:"commit", p_ref:.id, p_branch:$b,
+                 p_author:.author.name, p_message:.message, p_url:.url,
+                 p_occurred_at:.timestamp}' "$GITHUB_EVENT_PATH" |
+            while read -r payload; do send "$payload"; done
+          fi
+
+          if [ "$EVENT_NAME" = "deployment_status" ]; then
+            STATE=$(jq -r '.deployment_status.state' "$GITHUB_EVENT_PATH")
+            case "$STATE" in success|failure|error) ;; *) exit 0 ;; esac
+            send "$(jq -c --arg t "$TOKEN" --arg r "$REPO" '{
+              p_token:$t, p_repo:$r, p_event_type:"deploy",
+              p_ref:(.deployment.id|tostring),
+              p_branch:.deployment.ref,
+              p_environment:.deployment.environment,
+              p_status:.deployment_status.state,
+              p_author:.deployment.creator.login,
+              p_message:(.deployment.description // ("Déploiement de " + .deployment.sha)),
+              p_url:(.deployment_status.environment_url // .deployment_status.target_url),
+              p_occurred_at:.deployment_status.created_at}' "$GITHUB_EVENT_PATH")"
+          fi
