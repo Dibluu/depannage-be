@@ -1,0 +1,2177 @@
+{
+ "date": "2026-11-20",
+ "config": {
+  "client": "Serrurier Kiverrou",
+  "domain": "kiverrou.be",
+  "brand_match": "kiverrou",
+  "labs_location_code": 2056,
+  "labs_languages": [
+   "fr",
+   "nl"
+  ],
+  "objectif": {
+   "label": "Top 10 sur « serrurier + commune » dans la zone principale (Ixelles, Uccle, Etterbeek, Auderghem, Wavre, Waterloo, Rixensart, La Hulpe) et ETV > 150 / mois",
+   "etv": 150
+  },
+  "budget_usd": 1.5,
+  "serp_depth": 30,
+  "ranked_limit": 1000,
+  "onpage_pages": 12,
+  "key_pages": [
+   "https://kiverrou.be/",
+   "https://kiverrou.be/serrurier-uccle/",
+   "https://kiverrou.be/serrurier-ixelles/",
+   "https://kiverrou.be/serrurier-etterbeek/",
+   "https://kiverrou.be/serrurier-auderghem/",
+   "https://kiverrou.be/serrurier-wavre/",
+   "https://kiverrou.be/serrurier-waterloo/"
+  ],
+  "ignore_domains": [
+   "pagesdor.be",
+   "starofservice.be",
+   "trustup.be",
+   "goudengids.be",
+   "facebook.com",
+   "yelp.com"
+  ],
+  "gap_competitors": [
+   "willems-serrurier.be",
+   "ou-serrurier.be",
+   "serrurierbruxelles.eu",
+   "secutek.be"
+  ],
+  "gap_min_volume": 50,
+  "gap_limit": 300,
+  "tracked_keywords": [
+   {
+    "keyword": "serrurier bruxelles",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "serrurier urgence bruxelles",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "serrurier",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "serrurier uccle",
+    "location": "Uccle"
+   },
+   {
+    "keyword": "serrurier ixelles",
+    "location": "Ixelles"
+   },
+   {
+    "keyword": "serrurier etterbeek",
+    "location": "Etterbeek"
+   },
+   {
+    "keyword": "serrurier auderghem",
+    "location": "Auderghem"
+   },
+   {
+    "keyword": "serrurier wavre",
+    "location": "Wavre"
+   },
+   {
+    "keyword": "serrurier waterloo",
+    "location": "Waterloo"
+   },
+   {
+    "keyword": "serrurier rixensart",
+    "location": "Walloon Brabant"
+   },
+   {
+    "keyword": "serrurier la hulpe",
+    "location": "La Hulpe"
+   },
+   {
+    "keyword": "serrurier schaerbeek",
+    "location": "Schaerbeek"
+   },
+   {
+    "keyword": "serrurier anderlecht",
+    "location": "Anderlecht"
+   },
+   {
+    "keyword": "serrurier evere",
+    "location": "Evere"
+   },
+   {
+    "keyword": "serrurier jette",
+    "location": "Jette"
+   },
+   {
+    "keyword": "serrurier forest",
+    "location": "Forest"
+   },
+   {
+    "keyword": "serrurier molenbeek",
+    "location": "Sint-Jans-Molenbeek"
+   },
+   {
+    "keyword": "serrurier nivelles",
+    "location": "Nivelles"
+   },
+   {
+    "keyword": "serrurier automobile",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "prix serrurier",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "porte blindée bruxelles",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "serrure connectée",
+    "location": "Brussels"
+   },
+   {
+    "keyword": "slotenmaker brussel",
+    "location": "Brussels",
+    "lang": "nl"
+   },
+   {
+    "keyword": "slotenmaker mechelen",
+    "location": "Mechelen",
+    "lang": "nl"
+   },
+   {
+    "keyword": "slotenmaker leuven",
+    "location": "Leuven",
+    "lang": "nl"
+   },
+   {
+    "keyword": "slotenmaker vilvoorde",
+    "location": "Vilvoorde",
+    "lang": "nl"
+   }
+  ]
+ },
+ "overview": {
+  "fr": {
+   "pos_1": 0,
+   "pos_2_3": 0,
+   "pos_4_10": 1,
+   "pos_11_20": 10,
+   "pos_21_30": 1,
+   "pos_31_40": 2,
+   "pos_41_50": 0,
+   "pos_51_60": 0,
+   "pos_61_70": 0,
+   "pos_71_80": 0,
+   "pos_81_90": 0,
+   "pos_91_100": 0,
+   "etv": 58.55267161130905,
+   "count": 14,
+   "estimated_paid_traffic_cost": 159.64841902256012,
+   "is_new": 8,
+   "is_up": 3,
+   "is_down": 3,
+   "is_lost": 3,
+   "clickstream_etv": null,
+   "clickstream_gender_distribution": null,
+   "clickstream_age_distribution": null
+  },
+  "nl": {
+   "pos_1": 4,
+   "pos_2_3": 12,
+   "pos_4_10": 10,
+   "pos_11_20": 39,
+   "pos_21_30": 21,
+   "pos_31_40": 9,
+   "pos_41_50": 7,
+   "pos_51_60": 4,
+   "pos_61_70": 1,
+   "pos_71_80": 0,
+   "pos_81_90": 0,
+   "pos_91_100": 0,
+   "etv": 318.4421420870349,
+   "count": 107,
+   "estimated_paid_traffic_cost": 314.5991148930043,
+   "is_new": 40,
+   "is_up": 36,
+   "is_down": 24,
+   "is_lost": 54,
+   "clickstream_etv": null,
+   "clickstream_gender_distribution": null,
+   "clickstream_age_distribution": null
+  }
+ },
+ "ranked_keywords": [
+  {
+   "keyword": "serrurier",
+   "volume": 5400,
+   "position": 16,
+   "url": "/",
+   "etv": 23.41,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serruriers",
+   "volume": 5400,
+   "position": 3,
+   "url": "/serruriers-bruxelles/",
+   "etv": 1.07,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier bruxelles",
+   "volume": 2900,
+   "position": 20,
+   "url": "/",
+   "etv": 10.3,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier à proximité",
+   "volume": 2400,
+   "position": 18,
+   "url": "/serrurier-a-liege/",
+   "etv": 8.83,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "slotenmaker gent",
+   "volume": 1900,
+   "position": 52,
+   "url": "/slotenmaker-gent/",
+   "etv": 1.35,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier autour de moi",
+   "volume": 1300,
+   "position": 19,
+   "url": "/",
+   "etv": 4.74,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "adam serrurier",
+   "volume": 1300,
+   "position": 31,
+   "url": "/",
+   "etv": 3.69,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurerie autour de moi",
+   "volume": 1300,
+   "position": 18,
+   "url": "/serrurerie-bruxelles/",
+   "etv": 4.78,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie liege",
+   "volume": 1300,
+   "position": 20,
+   "url": "/serrurier-a-liege/",
+   "etv": 5.96,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "slotenmaker mechelen",
+   "volume": 1300,
+   "position": 17,
+   "url": "/slotenmaker-mechelen/",
+   "etv": 7.28,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrure",
+   "volume": 1000,
+   "position": 25,
+   "url": "/serrures-bruxelles/",
+   "etv": 2.7,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurier uccle",
+   "volume": 880,
+   "position": 17,
+   "url": "/serrurier-uccle/",
+   "etv": 3.64,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrure connectée",
+   "volume": 720,
+   "position": 32,
+   "url": "/serrure-electronique/",
+   "etv": 1.4,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurier near me",
+   "volume": 720,
+   "position": 32,
+   "url": "/serrurier-forest/",
+   "etv": 0.98,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier schaerbeek",
+   "volume": 720,
+   "position": 7,
+   "url": "/serrurier-schaerbeek-laeken/",
+   "etv": 5.4,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier ixelles",
+   "volume": 590,
+   "position": 14,
+   "url": "/serrurier-ixelles/",
+   "etv": 3.68,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurerie anderlecht",
+   "volume": 480,
+   "position": 11,
+   "url": "/serrurier-anderlecht/",
+   "etv": 3.21,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurerie waterloo",
+   "volume": 480,
+   "position": 18,
+   "url": "/serrurier-waterloo/",
+   "etv": 1.15,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurerie wavre",
+   "volume": 480,
+   "position": 20,
+   "url": "/serrurier-wavre/",
+   "etv": 2.08,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier anderlecht",
+   "volume": 480,
+   "position": 20,
+   "url": "/serrurier-anderlecht/",
+   "etv": 2.01,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier evere",
+   "volume": 480,
+   "position": 13,
+   "url": "/serrurier-evere-1140/",
+   "etv": 2.72,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier waterloo",
+   "volume": 480,
+   "position": 18,
+   "url": "/serrurier-waterloo/",
+   "etv": 1.15,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier wavre",
+   "volume": 480,
+   "position": 18,
+   "url": "/serrurier-wavre/",
+   "etv": 1.59,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier georges henri",
+   "volume": 480,
+   "position": 28,
+   "url": "/serruriers-bruxelles/",
+   "etv": 2.09,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurerie",
+   "volume": 390,
+   "position": 10,
+   "url": "/serrurier-anderlecht/",
+   "etv": 5.28,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie nivelles",
+   "volume": 390,
+   "position": 18,
+   "url": "/serrurier-nivelles/",
+   "etv": 0.04,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier d'urgence",
+   "volume": 390,
+   "position": 17,
+   "url": "/serrurerie-urgence/",
+   "etv": 0.21,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier en urgence",
+   "volume": 390,
+   "position": 19,
+   "url": "/serrurerie-urgence/",
+   "etv": 0.24,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier jette",
+   "volume": 390,
+   "position": 14,
+   "url": "/serrurier-jette/",
+   "etv": 1.51,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier nivelles",
+   "volume": 390,
+   "position": 13,
+   "url": "/serrurier-nivelles/",
+   "etv": 1.52,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurier urgence",
+   "volume": 390,
+   "position": 13,
+   "url": "/",
+   "etv": 1.03,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "slotenmaker brussel",
+   "volume": 390,
+   "position": 15,
+   "url": "/slotenmaker-brussel/",
+   "etv": 2.2,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "urgence serrurerie",
+   "volume": 390,
+   "position": 22,
+   "url": "/serrurerie-urgence/",
+   "etv": 0.57,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "urgence serrurier",
+   "volume": 390,
+   "position": 17,
+   "url": "/",
+   "etv": 0.8,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "auderghem henrard serrures",
+   "volume": 320,
+   "position": 24,
+   "url": "/serrurier-auderghem/",
+   "etv": 2.09,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier bruxelles depannage",
+   "volume": 320,
+   "position": 20,
+   "url": "/",
+   "etv": 0.01,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier bruxelles dépannage",
+   "volume": 320,
+   "position": 13,
+   "url": "/",
+   "etv": 1.8,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier molenbeek",
+   "volume": 320,
+   "position": 2,
+   "url": "/serrurier-molenbeek-saint-jean/",
+   "etv": 42.67,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier urgence bruxelles",
+   "volume": 320,
+   "position": 5,
+   "url": "/",
+   "etv": 4.27,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "artisan serrurier vanhove anderlecht",
+   "volume": 260,
+   "position": 25,
+   "url": "/serrurier-anderlecht/",
+   "etv": 1.52,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "passe-partout ninove",
+   "volume": 260,
+   "position": 3,
+   "url": "/slotenmaker-ninove/",
+   "etv": 0.2,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurerie etterbeek",
+   "volume": 260,
+   "position": 14,
+   "url": "/serrurier-etterbeek/",
+   "etv": 1.45,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier auderghem",
+   "volume": 260,
+   "position": 5,
+   "url": "/serrurier-auderghem/",
+   "etv": 4.95,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier automobile",
+   "volume": 260,
+   "position": 16,
+   "url": "/ouverture-porte-voiture/",
+   "etv": 1.13,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier braine l'alleud",
+   "volume": 260,
+   "position": 1,
+   "url": "/serrurier-braine-le-chateau/",
+   "etv": 5.96,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurier bruxelles urgence",
+   "volume": 260,
+   "position": 14,
+   "url": "/",
+   "etv": 1.45,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier etterbeek",
+   "volume": 260,
+   "position": 18,
+   "url": "/serrurier-etterbeek/",
+   "etv": 1.34,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier laeken",
+   "volume": 260,
+   "position": 18,
+   "url": "/serrurier-schaerbeek-laeken/",
+   "etv": 1.2,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "sleutel bijmaken gent",
+   "volume": 260,
+   "position": 43,
+   "url": "/slotenmaker-gent/",
+   "etv": 0.19,
+   "intent": "informational"
+  },
+  {
+   "keyword": "slotenmaker vilvoorde",
+   "volume": 260,
+   "position": 9,
+   "url": "/slotenmaker-vilvoorde/",
+   "etv": 1.44,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "cordonnerie uccle",
+   "volume": 210,
+   "position": 45,
+   "url": "/serrurier-uccle/",
+   "etv": 0.15,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "dépannage serrurier",
+   "volume": 210,
+   "position": 8,
+   "url": "/serrurier-courcelles/",
+   "etv": 0.68,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie depannage",
+   "volume": 210,
+   "position": 18,
+   "url": "/",
+   "etv": 0.39,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie dépannage",
+   "volume": 210,
+   "position": 16,
+   "url": "/serrurerie-urgence/",
+   "etv": 0.46,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie forest",
+   "volume": 210,
+   "position": 8,
+   "url": "/serrurier-forest/",
+   "etv": 1.02,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier depannage",
+   "volume": 210,
+   "position": 15,
+   "url": "/serrurier-a-liege/",
+   "etv": 0.35,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier dépannage",
+   "volume": 210,
+   "position": 19,
+   "url": "/",
+   "etv": 0.26,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier dépanneur",
+   "volume": 210,
+   "position": 14,
+   "url": "/serrurerie-urgence/",
+   "etv": 1.08,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier slotenmaker",
+   "volume": 210,
+   "position": 2,
+   "url": "/slotenmaker-leuven/",
+   "etv": 9.18,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "slotenmaker dendermonde",
+   "volume": 210,
+   "position": 10,
+   "url": "/slotenmaker-dendermonde/",
+   "etv": 1.26,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "cordonnerie etterbeek",
+   "volume": 170,
+   "position": 35,
+   "url": "/serrurier-etterbeek/",
+   "etv": 0.32,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "lello serrurier",
+   "volume": 170,
+   "position": 31,
+   "url": "/serrurier-uccle/",
+   "etv": 0.43,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurerie liège a la forge serrurier",
+   "volume": 170,
+   "position": 34,
+   "url": "/serrurier-a-liege/",
+   "etv": 0.56,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier rixensart",
+   "volume": 170,
+   "position": 11,
+   "url": "/serrurier-rixensart/",
+   "etv": 1.65,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier wemmel",
+   "volume": 170,
+   "position": 3,
+   "url": "/serrurier-wemmel/",
+   "etv": 12.26,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "sleutel bijmaken leuven",
+   "volume": 170,
+   "position": 20,
+   "url": "/slotenmaker-leuven/",
+   "etv": 0.02,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "sloten sleutels",
+   "volume": 170,
+   "position": 13,
+   "url": "/slotenmaker-mechelen/",
+   "etv": 0.01,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "faire double de clé",
+   "volume": 140,
+   "position": 54,
+   "url": "/reproduction-de-cle/",
+   "etv": 0.04,
+   "intent": "informational"
+  },
+  {
+   "keyword": "porte blindée bruxelles",
+   "volume": 140,
+   "position": 29,
+   "url": "/blindage-de-porte/",
+   "etv": 0.25,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie liège",
+   "volume": 140,
+   "position": 18,
+   "url": "/serrurier-a-liege/",
+   "etv": 0.36,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "ou faire double de clé",
+   "volume": 110,
+   "position": 46,
+   "url": "/reproduction-de-cle/",
+   "etv": 0.04,
+   "intent": "informational"
+  },
+  {
+   "keyword": "serrure electrique",
+   "volume": 110,
+   "position": 42,
+   "url": "/serrures-bruxelles/",
+   "etv": 0.08,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurerie degros",
+   "volume": 110,
+   "position": 24,
+   "url": "/",
+   "etv": 0.57,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier pour voiture",
+   "volume": 110,
+   "position": 2,
+   "url": "/ouverture-porte-voiture/",
+   "etv": 2.64,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "clé reproduction",
+   "volume": 90,
+   "position": 30,
+   "url": "/reproduction-de-cle/",
+   "etv": 0.18,
+   "intent": "informational"
+  },
+  {
+   "keyword": "copie de clé schaerbeek",
+   "volume": 90,
+   "position": 2,
+   "url": "/serrurier-schaerbeek-laeken/",
+   "etv": 6.95,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "prix serrurier",
+   "volume": 90,
+   "position": 26,
+   "url": "/tarif-serrurier-bruxelles/",
+   "etv": 0.09,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "reproduction clés",
+   "volume": 90,
+   "position": 45,
+   "url": "/reproduction-de-cle/",
+   "etv": 0.08,
+   "intent": "informational"
+  },
+  {
+   "keyword": "serrurerie prix",
+   "volume": 90,
+   "position": 26,
+   "url": "/tarif-serrurier-bruxelles/",
+   "etv": 0.18,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier overijse",
+   "volume": 90,
+   "position": 2,
+   "url": "/serrurier-overijse/",
+   "etv": 6.89,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier prix",
+   "volume": 90,
+   "position": 24,
+   "url": "/tarif-serrurier-bruxelles/",
+   "etv": 0.1,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "cordonnier rixensart",
+   "volume": 70,
+   "position": 28,
+   "url": "/serrurier-rixensart/",
+   "etv": 0.35,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "dépannage wavre",
+   "volume": 70,
+   "position": 16,
+   "url": "/serrurier-wavre/",
+   "etv": 0.19,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "henrard serrures",
+   "volume": 70,
+   "position": 29,
+   "url": "/serrurier-auderghem/",
+   "etv": 0.34,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "portes blindées bruxelles prix",
+   "volume": 70,
+   "position": 44,
+   "url": "/blindage-de-porte/",
+   "etv": 0.02,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurerie andennaise",
+   "volume": 70,
+   "position": 35,
+   "url": "/",
+   "etv": 0.11,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier berchem sainte agathe",
+   "volume": 70,
+   "position": 2,
+   "url": "/serrurier-berchem-sainte-agathe/",
+   "etv": 4.3,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier berchem-sainte-agathe",
+   "volume": 70,
+   "position": 2,
+   "url": "/serrurier-berchem-sainte-agathe/",
+   "etv": 4.3,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier braine le comte",
+   "volume": 70,
+   "position": 15,
+   "url": "/serrurier-braine-le-comte/",
+   "etv": 0.38,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier braine-le-comte",
+   "volume": 70,
+   "position": 14,
+   "url": "/serrurier-braine-le-comte/",
+   "etv": 0.01,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier grez doiceau",
+   "volume": 70,
+   "position": 2,
+   "url": "/serrurier-grez-doiceau/",
+   "etv": 1.61,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier grez-doiceau",
+   "volume": 70,
+   "position": 2,
+   "url": "/serrurier-grez-doiceau/",
+   "etv": 2.68,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier grimbergen",
+   "volume": 70,
+   "position": 31,
+   "url": "/serrurier-forest/",
+   "etv": 0.18,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier la hulpe",
+   "volume": 70,
+   "position": 4,
+   "url": "/serrurier-la-hulpe/",
+   "etv": 2.31,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier louvain la neuve",
+   "volume": 70,
+   "position": 56,
+   "url": "/serrurier-tubize/",
+   "etv": 0.01,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier louvain-la-neuve",
+   "volume": 70,
+   "position": 1,
+   "url": "/serrurier-louvain-la-neuve/",
+   "etv": 23.47,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier meise",
+   "volume": 70,
+   "position": 10,
+   "url": "/slotenmaker-meise/",
+   "etv": 0.53,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier meiser",
+   "volume": 70,
+   "position": 22,
+   "url": "/serrurier-schaerbeek-laeken/",
+   "etv": 0.27,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier neder over heembeek",
+   "volume": 70,
+   "position": 28,
+   "url": "/",
+   "etv": 0.16,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier pres de moi",
+   "volume": 70,
+   "position": 21,
+   "url": "/",
+   "etv": 0.29,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurier radio",
+   "volume": 70,
+   "position": 23,
+   "url": "/ouverture-de-porte/",
+   "etv": 0.18,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurier sint pieters leeuw",
+   "volume": 70,
+   "position": 1,
+   "url": "/serrurier-sint-pieters-leeuw/",
+   "etv": 17.23,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier sint-pieters-leeuw",
+   "volume": 70,
+   "position": 1,
+   "url": "/serrurier-sint-pieters-leeuw/",
+   "etv": 13.58,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "serrurier vleurgat",
+   "volume": 70,
+   "position": 27,
+   "url": "/",
+   "etv": 0.33,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "slotenmaker kessel lo",
+   "volume": 70,
+   "position": 31,
+   "url": "/slotenmaker-leuven/",
+   "etv": 0.0,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "slotenmaker kessel-lo",
+   "volume": 70,
+   "position": 31,
+   "url": "/slotenmaker-leuven/",
+   "etv": 0.14,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "slotenmaker wemmel",
+   "volume": 70,
+   "position": 59,
+   "url": "/serrurier-wemmel/",
+   "etv": 0.03,
+   "intent": "transactional"
+  },
+  {
+   "keyword": "serrurerie portail",
+   "volume": 50,
+   "position": 22,
+   "url": "/",
+   "etv": 0.05,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "serrurier quincaillerie",
+   "volume": 50,
+   "position": 42,
+   "url": "/",
+   "etv": 0.04,
+   "intent": "commercial"
+  },
+  {
+   "keyword": "sleutels mechelen",
+   "volume": 50,
+   "position": 8,
+   "url": "/slotenmaker-mechelen/",
+   "etv": 0.15,
+   "intent": "navigational"
+  },
+  {
+   "keyword": "slotenmaker liedekerke",
+   "volume": 50,
+   "position": 66,
+   "url": "/serrurier-liedekerke/",
+   "etv": 0.02,
+   "intent": "navigational"
+  }
+ ],
+ "competitors": [
+  {
+   "domain": "willems-serrurier.be",
+   "shared_keywords": 13,
+   "avg_position": 9.3,
+   "etv": 206,
+   "keywords": 30
+  },
+  {
+   "domain": "ou-serrurier.be",
+   "shared_keywords": 13,
+   "avg_position": 2.2,
+   "etv": 1353,
+   "keywords": 27
+  },
+  {
+   "domain": "secutek.be",
+   "shared_keywords": 12,
+   "avg_position": 13.9,
+   "etv": 262,
+   "keywords": 21
+  },
+  {
+   "domain": "securikey.be",
+   "shared_keywords": 12,
+   "avg_position": 36.6,
+   "etv": 18,
+   "keywords": 14
+  },
+  {
+   "domain": "serrurierbruxelles.eu",
+   "shared_keywords": 9,
+   "avg_position": 19.8,
+   "etv": 191,
+   "keywords": 11
+  },
+  {
+   "domain": "belfix.be",
+   "shared_keywords": 9,
+   "avg_position": 22.7,
+   "etv": 236,
+   "keywords": 52
+  },
+  {
+   "domain": "serrurier-thomas.be",
+   "shared_keywords": 9,
+   "avg_position": 70.8,
+   "etv": 3,
+   "keywords": 11
+  },
+  {
+   "domain": "keylocks.be",
+   "shared_keywords": 9,
+   "avg_position": 31.2,
+   "etv": 10,
+   "keywords": 11
+  },
+  {
+   "domain": "daniel-serrurier.be",
+   "shared_keywords": 9,
+   "avg_position": 23.7,
+   "etv": 55,
+   "keywords": 11
+  },
+  {
+   "domain": "serrurierjacobs.be",
+   "shared_keywords": 9,
+   "avg_position": 23.4,
+   "etv": 31,
+   "keywords": 16
+  },
+  {
+   "domain": "serrurier-peters.be",
+   "shared_keywords": 9,
+   "avg_position": 48.8,
+   "etv": 6,
+   "keywords": 12
+  },
+  {
+   "domain": "nosavis.be",
+   "shared_keywords": 8,
+   "avg_position": 13.8,
+   "etv": 8067,
+   "keywords": 1689
+  },
+  {
+   "domain": "net.mc",
+   "shared_keywords": 8,
+   "avg_position": 63.1,
+   "etv": 130,
+   "keywords": 134
+  },
+  {
+   "domain": "serruriers-belgique.be",
+   "shared_keywords": 8,
+   "avg_position": 24.2,
+   "etv": 217,
+   "keywords": 18
+  },
+  {
+   "domain": "belock.be",
+   "shared_keywords": 8,
+   "avg_position": 12,
+   "etv": 108,
+   "keywords": 12
+  },
+  {
+   "domain": "serrurierbelgium.be",
+   "shared_keywords": 8,
+   "avg_position": 19.6,
+   "etv": 475,
+   "keywords": 18
+  }
+ ],
+ "serp": [
+  {
+   "keyword": "serrurier bruxelles",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "serrurier-tomberg.be",
+    "mikaelserrurier.be",
+    "serrurierbxl.com"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "related_searches"
+   ]
+  },
+  {
+   "keyword": "serrurier urgence bruxelles",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "serrurierbxl.com",
+    "serrurier-depannage.be",
+    "keys4locks.com"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "serruriersprl.be",
+    "serrurier-liege-express.be",
+    "serrurierbelgium.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "images",
+    "related_searches"
+   ]
+  },
+  {
+   "keyword": "serrurier uccle",
+   "lang": "fr",
+   "location": "Uccle",
+   "location_code": 1001018,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "m.yelp.com",
+    "m.yelp.com",
+    "serrurier123.com"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier ixelles",
+   "lang": "fr",
+   "location": "Ixelles",
+   "location_code": 1001010,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "bel-serrures.be",
+    "m.yelp.com",
+    "securikey.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites"
+   ]
+  },
+  {
+   "keyword": "serrurier etterbeek",
+   "lang": "fr",
+   "location": "Etterbeek",
+   "location_code": 1001006,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "serrurier-depannage.be",
+    "serrurierkoekelberg.be",
+    "pagesdor.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "related_searches"
+   ]
+  },
+  {
+   "keyword": "serrurier auderghem",
+   "lang": "fr",
+   "location": "Auderghem",
+   "location_code": 9040057,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "m.yelp.com",
+    "infobel.com",
+    "bel-serrures.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier wavre",
+   "lang": "fr",
+   "location": "Wavre",
+   "location_code": 1001329,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "belfix.be",
+    "ou-serrurier.be",
+    "svs-depannage.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier waterloo",
+   "lang": "fr",
+   "location": "Waterloo",
+   "location_code": 1001327,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "goudengids.be",
+    "trustup.be",
+    "infobel.com"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites"
+   ]
+  },
+  {
+   "keyword": "serrurier rixensart",
+   "lang": "fr",
+   "location": "Walloon Brabant",
+   "location_code": 20058,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "goudengids.be",
+    "monrepertoire.be",
+    "trustup.be"
+   ],
+   "features": [
+    "ai_overview",
+    "people_also_ask",
+    "google_reviews",
+    "knowledge_graph"
+   ]
+  },
+  {
+   "keyword": "serrurier la hulpe",
+   "lang": "fr",
+   "location": "La Hulpe",
+   "location_code": 1001316,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "pagesdor.be",
+    "trustup.be",
+    "trustup.be"
+   ],
+   "features": [
+    "ai_overview",
+    "people_also_ask",
+    "google_reviews",
+    "knowledge_graph"
+   ]
+  },
+  {
+   "keyword": "serrurier schaerbeek",
+   "lang": "fr",
+   "location": "Schaerbeek",
+   "location_code": 1001015,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "m.yelp.com",
+    "facebook.com",
+    "serruriers-bruxelles.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier anderlecht",
+   "lang": "fr",
+   "location": "Anderlecht",
+   "location_code": 1001001,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "anderlecht-serrure-vanhove.be",
+    "willems-serrurier.be",
+    "bedrijvenwijzer.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "related_searches"
+   ]
+  },
+  {
+   "keyword": "serrurier evere",
+   "lang": "fr",
+   "location": "Evere",
+   "location_code": 1001007,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "securikey.be",
+    "sos247.be",
+    "serruriermrj.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "related_searches",
+    "images"
+   ]
+  },
+  {
+   "keyword": "serrurier jette",
+   "lang": "fr",
+   "location": "Jette",
+   "location_code": 1001011,
+   "position": 8,
+   "serp_title": "Serrurier Jette 1090 - Service Serrurerie & Dépannage ...",
+   "local_pack": null,
+   "top3": [
+    "secutek.be",
+    "ou-serrurier.be",
+    "trustup.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "related_searches"
+   ]
+  },
+  {
+   "keyword": "serrurier forest",
+   "lang": "fr",
+   "location": "Forest",
+   "location_code": 9040070,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "yelp.com",
+    "serrurierbruxelles-hs.com",
+    "serruriermrj.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask",
+    "related_searches"
+   ]
+  },
+  {
+   "keyword": "serrurier molenbeek",
+   "lang": "fr",
+   "location": "Sint-Jans-Molenbeek",
+   "location_code": 9040068,
+   "position": null,
+   "serp_title": null,
+   "local_pack": 3,
+   "top3": [
+    "trustup.be",
+    "facebook.com",
+    "serruriers.nosavis.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier nivelles",
+   "lang": "fr",
+   "location": "Nivelles",
+   "location_code": 1001321,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "monrepertoire.be",
+    "facebook.com",
+    "trustup.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrurier automobile",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "pagesdor.be",
+    "mecano-security.be",
+    "serrurierdubois.be"
+   ],
+   "features": [
+    "ai_overview",
+    "people_also_ask",
+    "related_searches",
+    "google_reviews",
+    "knowledge_graph",
+    "images"
+   ]
+  },
+  {
+   "keyword": "prix serrurier",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "mikaelserrurier.be",
+    "mikaelserrurier.be",
+    "belgiumsecuritygroup.be"
+   ],
+   "features": [
+    "ai_overview",
+    "images",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "porte blindée bruxelles",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "hommedemetier.be",
+    "hommedemetier.be",
+    "bbexpo.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "serrure connectée",
+   "lang": "fr",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "nuki.io",
+    "test-achats.be",
+    "brico.be"
+   ],
+   "features": [
+    "people_also_ask",
+    "popular_products",
+    "local_pack",
+    "compare_sites",
+    "related_searches",
+    "images"
+   ]
+  },
+  {
+   "keyword": "slotenmaker brussel",
+   "lang": "nl",
+   "location": "Brussels",
+   "location_code": 1001004,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "bruxellesserruriers.be",
+    "trustup.be",
+    "goudengids.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites"
+   ]
+  },
+  {
+   "keyword": "slotenmaker mechelen",
+   "lang": "nl",
+   "location": "Mechelen",
+   "location_code": 1001059,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "slotenensleutels.be",
+    "google.com",
+    "techno-preventie.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "people_also_ask",
+    "related_searches",
+    "images"
+   ]
+  },
+  {
+   "keyword": "slotenmaker leuven",
+   "lang": "nl",
+   "location": "Leuven",
+   "location_code": 1001118,
+   "position": 28,
+   "serp_title": "Slotenmaker Leuven 24/7, problemen met uw sloten?",
+   "local_pack": null,
+   "top3": [
+    "van-eyckbe.webhosting.be",
+    "handelsgids.be",
+    "yelp.com"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack",
+    "compare_sites",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "slotenmaker vilvoorde",
+   "lang": "nl",
+   "location": "Vilvoorde",
+   "location_code": 1001145,
+   "position": null,
+   "serp_title": null,
+   "local_pack": null,
+   "top3": [
+    "bottin.be",
+    "opendi.be",
+    "pagesdor.be"
+   ],
+   "features": [
+    "ai_overview",
+    "local_pack"
+   ]
+  }
+ ],
+ "gaps": [
+  {
+   "keyword": "serrurier à liège",
+   "volume": 1300,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #8",
+    "ou-serrurier.be #4",
+    "secutek.be #3"
+   ]
+  },
+  {
+   "keyword": "serrurerie schaerbeek",
+   "volume": 720,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #9",
+    "ou-serrurier.be #1",
+    "secutek.be #2"
+   ]
+  },
+  {
+   "keyword": "serrurier namur",
+   "volume": 720,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #10",
+    "ou-serrurier.be #4",
+    "secutek.be #3"
+   ]
+  },
+  {
+   "keyword": "serrurerie charleroi",
+   "volume": 880,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #5",
+    "ou-serrurier.be #6"
+   ]
+  },
+  {
+   "keyword": "serrurier near me",
+   "volume": 720,
+   "client_position": 32,
+   "competitors": [
+    "willems-serrurier.be #7",
+    "ou-serrurier.be #2"
+   ]
+  },
+  {
+   "keyword": "serrurerie namur",
+   "volume": 720,
+   "client_position": null,
+   "competitors": [
+    "ou-serrurier.be #2",
+    "secutek.be #6"
+   ]
+  },
+  {
+   "keyword": "serrurerie evere",
+   "volume": 480,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #6",
+    "ou-serrurier.be #1"
+   ]
+  },
+  {
+   "keyword": "serrurier tournai",
+   "volume": 480,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #7",
+    "ou-serrurier.be #3"
+   ]
+  },
+  {
+   "keyword": "serrurier liege",
+   "volume": 1300,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #3"
+   ]
+  },
+  {
+   "keyword": "serrurerie tournai",
+   "volume": 480,
+   "client_position": null,
+   "competitors": [
+    "willems-serrurier.be #5"
+   ]
+  }
+ ],
+ "backlinks": {
+  "rank": 154,
+  "backlinks": 697,
+  "referring_domains": 116,
+  "referring_main_domains": 112,
+  "backlinks_spam_score": 53,
+  "broken_backlinks": 0,
+  "broken_pages": 0,
+  "spam_urls_to_test": 96,
+  "recent_referring_domains": [
+   {
+    "domain": "deytoncamp.com",
+    "first_seen": "2026-11-19",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "colonrejuvenatorsite.com",
+    "first_seen": "2026-11-16",
+    "rank": 0,
+    "spam_score": 70
+   },
+   {
+    "domain": "merrigoldfinance.com",
+    "first_seen": "2026-11-15",
+    "rank": 0,
+    "spam_score": 70
+   },
+   {
+    "domain": "shortenurls.eu",
+    "first_seen": "2026-11-13",
+    "rank": 0,
+    "spam_score": 50
+   },
+   {
+    "domain": "lorentius.com",
+    "first_seen": "2026-11-11",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "topentreno.com",
+    "first_seen": "2026-11-08",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "siteprice.org",
+    "first_seen": "2026-11-06",
+    "rank": 0,
+    "spam_score": 10
+   },
+   {
+    "domain": "webrankingsolutionbacklinks.com",
+    "first_seen": "2026-10-30",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "websquemolan.com",
+    "first_seen": "2026-10-29",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "worldtopbacklinks.com",
+    "first_seen": "2026-10-29",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "wowqualitybacklinks.com",
+    "first_seen": "2026-10-29",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "webbacklinkskbuy.com",
+    "first_seen": "2026-10-29",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "dbike-us.com",
+    "first_seen": "2026-10-22",
+    "rank": 0,
+    "spam_score": 60
+   },
+   {
+    "domain": "welinkbacklinks.com",
+    "first_seen": "2026-10-20",
+    "rank": 0,
+    "spam_score": 50
+   },
+   {
+    "domain": "anchorurl.cloud",
+    "first_seen": "2026-10-20",
+    "rank": 0,
+    "spam_score": 50
+   }
+  ]
+ },
+ "onpage": [
+  {
+   "url": "https://kiverrou.be/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Bruxelles Kiverrou 24/7 - SOS dépannage & Urgence",
+   "title_len": 59,
+   "description": "Votre serrurier sur Bruxelles disponible dans les 30' à vos cotés ! Dépannage 24h/7j pour tous problèmes de serrurerie. Tarifs compétitifs & transparents !",
+   "description_len": 155,
+   "h1": [
+    "Serrurier à Bruxelles 24h/7j – Dépannage & Urgence dans les 30′"
+   ],
+   "words": 4158,
+   "load_ms": 70,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-uccle/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Uccle 1180 - Urgence & Dépannage Serrurerie 24h/7j",
+   "title_len": 60,
+   "description": "Dépannage de serrures et portes jour et nuit sur Uccle 1180. Votre expert serrurier à Uccle intervient pour tous types de problèmes en serrurerie 24h/7j !",
+   "description_len": 154,
+   "h1": [
+    "Serrurier Uccle 1180 – Dépannage serrurerie à votre service 24H"
+   ],
+   "words": 1929,
+   "load_ms": 55,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-ixelles/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Ixelles 1050 - Dépannage & Service d'Urgence 24h/7",
+   "title_len": 60,
+   "description": "Expert serrurier sur Ixelles disponible 24h/7j pour résoudre tous vos problèmes de serrurerie. Service de qualité, dépannage fiable sur Bruxelles 1050.",
+   "description_len": 151,
+   "h1": [
+    "Service d’Urgence & Dépannage Express – Serrurier Ixelles 1050"
+   ],
+   "words": 2578,
+   "load_ms": 87,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-etterbeek/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Etterbeek 1040 - Dépannage Express 24h/7j",
+   "title_len": 51,
+   "description": "Besoin d'ouverture de porte claquée, bloquée, dépannage serrure... Serrurier Etterbeek 1040, disponible 24h/7j pour tous vos problèmes en serrurerie.",
+   "description_len": 149,
+   "h1": [
+    "Serrurier Etterbeek 1040, dépannage de serrure jour et nuit !"
+   ],
+   "words": 865,
+   "load_ms": 63,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-auderghem/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Auderghem 1160 - Service & Dépannage Serrurerie H24/7j",
+   "title_len": 64,
+   "description": "Intervention sur Bruxelles 1160. Serrurier Auderghem intervient pour tout problème en serrurerie. Serrure, ouverture de porte, aide véhicule, coffre-fort...",
+   "description_len": 156,
+   "h1": [
+    "Serrurier Auderghem 1160 – Intervention & dépannage H24/7j"
+   ],
+   "words": 866,
+   "load_ms": 55,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-wavre/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Wavre 1300 - Serrurerie Urgence 24/7 et Dépannage",
+   "title_len": 59,
+   "description": "Dépannage 24h/7j sur région 1300. Serrurier à Wavre expert dans tous types d'interventions pour dépannage en serrurerie. Clé, coffre-fort, voiture, porte...",
+   "description_len": 156,
+   "h1": [
+    "Serrurier Wavre 1300 – Dépannage serrurereie 24h/7j"
+   ],
+   "words": 496,
+   "load_ms": 95,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-waterloo/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Waterloo 1410 - Dépannage 24/7 & Service Compétitif",
+   "title_len": 61,
+   "description": "Serrurier Waterloo dépannage de clé perdue, clé cassée, porte claquée, oublie de combinaison, dépannage coffre- fort, serrure de voiture...",
+   "description_len": 139,
+   "h1": [
+    "Serrurier Waterloo 1410 – Dépannage 24h/7j sur le Brabant"
+   ],
+   "words": 509,
+   "load_ms": 67,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-molenbeek-saint-jean/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Molenbeek 1080 - SOS Dépannage 24h/7j",
+   "title_len": 47,
+   "description": "Serrurerie Kiverrou à votre service 24H/24 sur Bruxelles. Dépannage serrurier Molenbeek-Saint-Jean pour tous vos problèmes de serrures, clés, voitures, etc.",
+   "description_len": 156,
+   "h1": [
+    "Avez-vous besoin d’un expert serrurier à Molenbeek Saint-Jean ?"
+   ],
+   "words": 925,
+   "load_ms": 57,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-sint-pieters-leeuw/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Sint-Pieters-Leeuw | 24h/7j - 0488.37.40.38",
+   "title_len": 53,
+   "description": "Serrurier à Sint-Pieters-Leeuw, dépannage 24h/7j spécialisé dans tous types d'interventions pour dépannage en serrurerie. Dépannage Saint-Pieters-Leeuw",
+   "description_len": 151,
+   "h1": [
+    "Serrurier Sint-Pieters-Leeuw – Dépannage 24h/7j"
+   ],
+   "words": 555,
+   "load_ms": 59,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-louvain-la-neuve/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Louvain-la-Neuve 1348 - Dépannage serrurerie 24/7",
+   "title_len": 59,
+   "description": "Serrurier à Louvain-La-Neuve, dépannage 24h/7j. Clé perdue ou cassée, porte claquée, oublie de combinaison, dépannage coffre- fort, serrure de voiture, etc.",
+   "description_len": 156,
+   "h1": [
+    "Serrurier Louvain-La-Neuve – Dépannage 24h/7j"
+   ],
+   "words": 553,
+   "load_ms": 71,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-a-liege/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Liège - Dépannage 24/7 - Meilleur Tarif Garanti 🆘",
+   "title_len": 59,
+   "description": "Service de serrurier fiable à Liège. Intervention rapide 24h/24 et 7j/7 ✋ Ouverture de porte, changement de serrure, tarifs imbattables. Artisans qualifiés !",
+   "description_len": 157,
+   "h1": [
+    "Artisans Serruriers à Liège : Intervention d’Urgence au Meilleur Prix !"
+   ],
+   "words": 1666,
+   "load_ms": 66,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  },
+  {
+   "url": "https://kiverrou.be/serrurier-schaerbeek-laeken/",
+   "status": 200,
+   "score": 97.1,
+   "title": "Serrurier Schaerbeek, Laeken 24/7 - Dépannage & Urgence 24/7",
+   "title_len": 60,
+   "description": "Serruriers à votre disposition sur votre commune de Laeken 1020 & Schaerbeek 1030. Serrurier à Schaerbeek & Laeken chez vous dans les 30' suivant l'appel !",
+   "description_len": 155,
+   "h1": [
+    "Serrurier Schaerbeek, Laeken – Urgence et dépannage serrure H24/7J"
+   ],
+   "words": 1402,
+   "load_ms": 58,
+   "issues": [
+    "has_render_blocking_resources",
+    "low_content_rate",
+    "deprecated_html_tags",
+    "duplicate_meta_tags"
+   ]
+  }
+ ],
+ "comparison": null,
+ "cost_usd": 0.37
+}
