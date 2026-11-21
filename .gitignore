@@ -4,3 +4,4 @@ node_modules
 
 # IndexNow: last submitted page fingerprints (kept in the Actions cache)
 .indexnow-state.json
+__pycache__/
