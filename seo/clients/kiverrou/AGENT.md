@@ -12,7 +12,8 @@ Tu travailles par cycles hebdomadaires : **mesurer → évaluer → décider →
 - Serrurerie résidentielle et commerciale : ouvertures, cylindres de sécurité, serrures multipoints, coffres-forts (source : `lib/partners.js`).
 - Zone : sud et est de Bruxelles (Ixelles, Uccle, Etterbeek, Auderghem) et Brabant wallon (Wavre, Waterloo, Rixensart, La Hulpe). Le site a aussi des pages hors zone (Liège, Courcelles, Gand, Malines, Louvain…).
 - Avis Google : 4,9/5 sur 206 avis (relevé du 28/09/2026).
-- Site WordPress, **pas d'accès au code** depuis ce dépôt : tu ne modifies pas kiverrou.be, tu livres des changements prêts à appliquer.
+- Site WordPress + Divi + SEOPress Pro + LiteSpeed Cache. **Accès admin via l'API REST** (mot de passe d'application injecté par le proxy : `curl -u x:y https://kiverrou.be/wp-json/...`, le proxy remplace `x:y`).
+- Le site annonce lui-même : intervention 24h/24 et 7j/7, « dans les 30′ » à Bruxelles (H1 de l'accueil), zones = est de Bruxelles, Brabant wallon, Liège et Flandre (page /zones-desservies/).
 - Partenaire de dépannage.be (ce dépôt) : voir `docs/backlinks/partner-kit.md`.
 - `[À COMPLÉTER]` : numéro d'urgence, horaires réels, tarifs, délai d'intervention, nom exact de la fiche Google Business Profile, accès Search Console.
 
@@ -32,6 +33,14 @@ Tu travailles par cycles hebdomadaires : **mesurer → évaluer → décider →
 6. **Backlinks** : liens locaux et thématiques (partenaires, annuaires belges de qualité). Surveiller les liens toxiques sans paniquer.
 7. **Technique** : vitesse, ressources bloquantes, balises `og:locale` (fr_BE / nl_BE), hreflang FR/NL.
 8. **Nouvelles pages** : seulement si la demande existe (volume) **et** si la zone est réellement desservie.
+
+## Modifier WordPress (API REST)
+- Title / meta : `POST /wp-json/wp/v2/pages/<id>` avec `{"meta":{"_seopress_titles_title":"…","_seopress_titles_desc":"…"}}`. Liste des pages : `GET /wp-json/wp/v2/pages?per_page=100&context=edit&_fields=id,slug,link,meta`.
+- **Avant toute écriture**, sauvegarde les valeurs actuelles dans `wp-backups/<date>-<objet>.json` (rollback possible).
+- **Après écriture**, vérifie le HTML public (`<title>`, `meta description`) et consigne l'action dans `journal.md` (ancienne → nouvelle valeur).
+- Autorisé directement (≤ 5 pages/cycle) : title, meta description, attributs alt, champs SEOPress (hors robots/canonical/redirections).
+- **Contenu des pages (Divi, `content.raw`)** : ne publie pas directement. Crée une révision en brouillon ou livre le bloc dans l'analyse ; le propriétaire valide via la PR.
+- Interdit : noindex, canonical, redirections, suppression ou changement de slug, extensions, réglages globaux, utilisateurs.
 
 ## Règles strictes
 - **N'invente jamais** de faits : tarifs, délais, avis, certifications, adresses, horaires. S'il manque une info, écris `[À COMPLÉTER : …]`.
